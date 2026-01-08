@@ -1,0 +1,176 @@
+@media (prefers-reduced-motion) {
+    .animated {
+        transition: none;
+    }
+}
+
+#hero .hero-animated {
+    opacity: 0;
+    filter: blur(2px);
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        filter 0.4s ease-out var(--delay, 0s);
+}
+
+#hero .hero-animated.show {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Desktop Animations (with centering) */
+@media (min-width: 769px) {
+    #hero .mainTexts.hero-animated {
+        transform: translate(-50%, -50%) translateY(50px);
+    }
+
+    #hero .mainTexts.hero-animated.show {
+        transform: translate(-50%, -50%) translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
+
+    #hero .ctaAbout.hero-animated {
+        transform: translate(-50%, -50%) translateY(50px);
+    }
+
+    #hero .ctaAbout.hero-animated.show {
+        transform: translate(-50%, -50%) translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
+}
+
+/* Mobile Animations (no centering) */
+@media (max-width: 768px) {
+    #hero .mainTexts.hero-animated {
+        transform: translateY(50px);
+    }
+
+    #hero .mainTexts.hero-animated.show {
+        transform: translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
+
+    #hero .ctaAbout.hero-animated {
+        transform: translateY(50px);
+    }
+
+    #hero .ctaAbout.hero-animated.show {
+        transform: translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
+}
+
+#hero .animated {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    transition: none !important;
+}
+
+#hero h1.hero-animated {
+    transform: translateY(60px);
+}
+
+#hero h1.hero-animated.show {
+    transform: translateY(0);
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        filter 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s);
+}
+
+#hero h2.hero-animated {
+    transform: translateY(50px);
+}
+
+#hero h2.hero-animated.show {
+    transform: translateY(0);
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        filter 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s);
+}
+
+.animated {
+    opacity: 0;
+    transform: translateY(60px);
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s);
+}
+
+.animated.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+p.animated {
+    transform: translateY(20px);
+}
+
+article.animated,
+.projectCard.animated {
+    transform: translateY(40px) scale(0.95);
+}
+
+.projectCard.animated.show {
+    transform: translateY(0) scale(1);
+}
+
+.infiniteCarousel.animated {
+    transform: translateY(30px);
+}
+
+.aboutText.animated,
+.aboutImgWrapper.animated {
+    transform: translateY(40px);
+}
+
+nav.animated {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+    transition:
+        opacity 0.3s ease-out var(--delay, 0s),
+        transform 0.3s ease-out var(--delay, 0s);
+}
+
+nav.animated.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.contact-main.animated {
+    transform: translateY(30px);
+}
+
+.contact-main.animated.show {
+    transform: translateY(0);
+}
+
+.contact-link.animated {
+    transform: translateY(50px) scale(0.9);
+}
+
+.contact-link.animated.show {
+    transform: translateY(0) scale(1);
+}
+
+.contact-mail.animated {
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s),
+        background-position 0.3s ease,
+        text-decoration-color 0.3s ease;
+}

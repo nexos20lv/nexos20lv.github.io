@@ -1,0 +1,45 @@
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(167, 132, 205, 0.2), rgba(124, 58, 237, 0.2));
+    border: 1px solid rgba(167, 132, 205, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, rgba(167, 132, 205, 0.4), rgba(124, 58, 237, 0.4));
+    border-color: rgba(167, 132, 205, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(167, 132, 205, 0.3);
+}
+
+.social-links a i {
+    font-size: 24px;
+    color: #a78bfa;
+    transition: color 0.3s ease;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.social-links a:hover i {
+    color: #c4b5fd;
+}

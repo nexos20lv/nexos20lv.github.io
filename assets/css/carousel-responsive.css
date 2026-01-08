@@ -1,0 +1,281 @@
+/* ===========================
+   3D CAROUSEL RESPONSIVE STYLES
+   =========================== */
+
+/* Mobile - Extra Small Devices (Portrait phones, less than 767px) */
+@media (max-width: 767px) {
+
+    /* Reduce padding on mobile since cards are smaller */
+    #projects {
+        padding: 30px 0 80px 0;
+    }
+
+    /* Skills Section */
+    #skills {
+        min-height: auto;
+        padding: 40px 10px;
+        gap: 25px;
+    }
+
+    .sectionTitle {
+        font-size: 28px !important;
+        margin-bottom: 10px;
+    }
+
+    .github-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .github-stat-card {
+        padding: 20px;
+    }
+
+    .github-stat-card i {
+        font-size: 28px;
+    }
+
+    .stat-value {
+        font-size: 32px;
+    }
+
+    .github-languages {
+        padding: 20px;
+    }
+
+    .languages-title {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 95%;
+    }
+
+    .skill-card {
+        padding: 12px 8px;
+    }
+
+    .skill-card i {
+        font-size: 32px;
+    }
+
+    .skill-card h3 {
+        font-size: 12px;
+    }
+
+    .skill-level-bar {
+        height: 4px;
+    }
+
+    /* 3D Carousel for Projects */
+    #projects {
+        padding: 40px 10px;
+    }
+
+    .projects-carousel-container {
+        height: 550px;
+        perspective: 600px;
+    }
+
+    .project-card {
+        width: 280px;
+        min-height: 480px;
+        margin-left: -140px;
+        margin-top: -240px;
+        padding: 16px;
+    }
+
+    .projectImgWrapper {
+        height: 160px;
+    }
+
+    .projectTitle {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .projectDesc {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .projectButtons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .projectButton {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .projectLiveDemo,
+    .projectDetails {
+        padding: 8px 16px;
+    }
+
+    .carousel-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .carousel-navigation {
+        padding: 0 5px;
+    }
+}
+
+/* Small devices (landscape phones, 481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    #skills {
+        min-height: auto;
+        padding: 70px 20px;
+        gap: 35px;
+    }
+
+    .github-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 16px;
+        width: 90%;
+    }
+
+    /* 3D Carousel */
+    .projects-carousel-container {
+        height: 550px;
+        perspective: 1000px;
+    }
+
+    .project-card {
+        width: 350px;
+        min-height: 480px;
+        margin-left: -175px;
+        margin-top: -240px;
+    }
+
+    .projectImgWrapper {
+        height: 200px;
+    }
+
+    .carousel-nav-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .carousel-navigation {
+        padding: 0 20px;
+    }
+}
+
+/* Medium devices (tablets, 769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projects-carousel-container {
+        height: 580px;
+        perspective: 1200px;
+    }
+
+    .project-card {
+        width: 400px;
+        min-height: 490px;
+        margin-left: -200px;
+        margin-top: -245px;
+    }
+
+    .projectImgWrapper {
+        height: 220px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
+
+/* Large devices (desktops, 1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .projects-carousel-container {
+        perspective: 1300px;
+    }
+}
+
+/* Extra Large devices (large desktops, 1441px+) */
+@media (min-width: 1441px) {
+    .projects-carousel-container {
+        max-width: 1600px;
+        perspective: 1600px;
+    }
+
+    .project-card {
+        width: 480px;
+        margin-left: -240px;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .projects-carousel-container {
+        height: 450px;
+    }
+
+    .project-card {
+        width: 320px;
+        min-height: 400px;
+        margin-left: -160px;
+        margin-top: -200px;
+    }
+
+    .projectImgWrapper {
+        height: 160px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+/* Height-specific adjustments for very short screens */
+@media (max-height: 600px) and (min-width: 769px) {
+    #skills {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .projects-carousel-container {
+        height: 500px;
+    }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: opacity 0.3s ease, filter 0.3s ease !important;
+    }
+
+    .skill-level,
+    .language-bar {
+        transition: width 0.1s ease !important;
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .github-stat-card:hover {
+        transform: none !important;
+    }
+
+    @keyframes shimmer {
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+    }
+}

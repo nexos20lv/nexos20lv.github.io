@@ -1,0 +1,62 @@
+[
+    {
+        "name": "HTML",
+        "icon": "fab fa-html5",
+        "level": 85
+    },
+    {
+        "name": "CSS",
+        "icon": "fab fa-css3-alt",
+        "level": 60
+    },
+    {
+        "name": "JavaScript",
+        "icon": "fab fa-js",
+        "level": 50
+    },
+    {
+        "name": "Python",
+        "icon": "fab fa-python",
+        "level": 80
+    },
+    {
+        "name": "Java",
+        "icon": "fab fa-java",
+        "level": 40
+    },
+    {
+        "name": "Node.js",
+        "icon": "fab fa-node-js",
+        "level": 65
+    },
+    {
+        "name": "Git",
+        "icon": "fab fa-git-alt",
+        "level": 90
+    },
+    {
+        "name": "SQL",
+        "icon": "fas fa-database",
+        "level": 65
+    },
+    {
+        "name": "Game Dev",
+        "icon": "fas fa-gamepad",
+        "level": 20
+    },
+    {
+        "name": "Linux",
+        "icon": "fab fa-linux",
+        "level": 80
+    },
+    {
+        "name": "Proxmox",
+        "icon": "fas fa-server",
+        "level": 75
+    },
+    {
+        "name": "UI/UX",
+        "icon": "fas fa-pen-ruler",
+        "level": 70
+    }
+]

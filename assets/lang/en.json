@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "brand": "Pierre",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "contact_btn": "Contact me"
+  },
+  "hero": {
+    "title": "Hi, I'm Pierre",
+    "subtitle": "Web Developer & Technology Enthusiast",
+    "cta": "Learn more about me"
+  },
+  "about": {
+    "title": "About",
+    "p1": "Passionate about development and new technologies, I create innovative and efficient solutions. My approach combines creativity and technical rigor to meet my  projects' needs.",
+    "p2": "Currently in First Year STI2D at Paul Duez high school, I'm aiming for an engineering school to deepen my skills in software development and embedded systems.",
+    "location": "Based in Cambrai, France"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's talk about your project",
+    "desc": "Feel free to contact me to discuss your ideas or just to say hello!",
+    "footer": "Designed and developed by myself with ❤️",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "viewDetails": "View Details",
+    "closeModal": "Close",
+    "project1": {
+      "title": "Career Conferences Paul Duez",
+      "desc": "A complete website to manage registrations for career conferences, facilitate student tracking and optimize organization.",
+      "modalTitle": "Career Conferences at Paul Duez High School",
+      "modalDesc": "I created a website to manage registrations for the career week and facilitate the work of the teacher in charge of career guidance and the organization of this week. It also allows tracking for homeroom teachers on their class students and to know which conferences the student attended.<br><br>Technologies used: HTML, CSS, JavaScript, PHP",
+      "linkSite": "View Site"
+    },
+    "project2": {
+      "title": "Minecraft Server EclozionMC",
+      "desc": "A custom Minecraft PvP Faction server with custom plugins and community events.",
+      "modalTitle": "Minecraft Server EclozionMC",
+      "modalDesc": "A custom Minecraft PvP Faction server with custom plugins for faction management, quests, and community events. The server has a dedicated website for presentation and community management.",
+      "linkSite": "View Site"
+    },
+    "project3": {
+      "title": "The Capsules War",
+      "desc": "My first video game, a multiplayer FPS developed with the Godot engine.",
+      "modalTitle": "The Capsules War",
+      "modalDesc": "This project is the first video game I created, it's an FPS type game playable in multiplayer with simple graphics. Developed with the Godot game engine and coded in GDScript, it allowed me to learn the basics of video game development and object-oriented programming.",
+      "linkGithub": "View on GitHub"
+    },
+    "project4": {
+      "title": "Portfolio",
+      "desc": "This very site! An interactive and modern showcase developed without framework.",
+      "modalTitle": "Personal Portfolio",
+      "modalDesc": "This portfolio is a showcase of my skills and projects. It was designed to be modern, performant, and fully responsive.<br><br><strong>Key features:</strong><br>- Purple \"neon\" theme with glassmorphism.<br>- Lanyard API integration for real-time Discord status.<br>- 3D circular carousel for projects.<br>- Smooth animations and unique design.<br><br>Technologies used: HTML5, CSS3, Vanilla JS.",
+      "linkGithub": "Source Code",
+      "linkLive": "View Live"
+    }
+  }
+}

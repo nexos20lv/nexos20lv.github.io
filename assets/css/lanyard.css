@@ -1,0 +1,156 @@
+/* Lanyard Specific Styles */
+.contact-lanyard-embedded {
+    background: rgba(13, 6, 18, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 15px;
+    width: 320px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.lanyard-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+#lanyard-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--glass-border);
+}
+
+.lanyard-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#lanyard-username {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.custom-status {
+    font-size: 13px;
+    color: var(--text-color);
+    margin: 2px 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.lanyard-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#lanyard-status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #747f8d;
+    /* Default offline */
+}
+
+#lanyard-status-text {
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+/* Activity Styles */
+.lanyard-activity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.lanyard-activity img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.lanyard-activity-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.activity-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity-details,
+.activity-state {
+    font-size: 12px;
+    color: var(--secondary-text-color);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* More Activities Button */
+.lanyard-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-color);
+    margin-top: 5px;
+    transition: background 0.2s;
+}
+
+.lanyard-more:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lanyard-more i {
+    transition: transform 0.3s ease;
+}
+
+.lanyard-more.expanded i {
+    transform: rotate(180deg);
+}
+
+/* Other Activities List */
+.lanyard-other-list {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

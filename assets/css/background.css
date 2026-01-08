@@ -1,0 +1,216 @@
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    pointer-events: none;
+    overflow: hidden;
+    animation: backgroundPulse 20s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+
+    0%,
+    100% {
+        background: radial-gradient(ellipse at 50% 0%, rgba(45, 21, 72, 0.3) 0%, transparent 60%);
+    }
+
+    50% {
+        background: radial-gradient(ellipse at 50% 0%, rgba(70, 40, 110, 0.4) 0%, transparent 70%);
+    }
+}
+
+/* Additional gradient overlay */
+.background::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(167, 132, 205, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(167, 132, 205, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Blobs */
+
+.blob {
+    background-size: cover;
+    width: auto;
+}
+
+#headerBlobCtn,
+#underHeaderBlobCtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    z-index: -300;
+}
+
+#headerBlobCtn {
+    transform: translate(calc(-45% + var(--p-x, 0px)), calc(-50% + var(--p-y, 0px)));
+}
+
+#headerBlob {
+    height: 100%;
+    width: 100%;
+    animation: headerBlobAnim 25s infinite alternate;
+}
+
+@keyframes headerBlobAnim {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-40deg);
+    }
+}
+
+#underHeaderBlobCtn {
+    transform: translate(calc(-100% + var(--p-x, 0px)), calc(-100% + var(--p-y, 0px)));
+}
+
+#underHeaderBlob {
+    height: 200%;
+    width: 200%;
+    opacity: 1;
+
+    animation: underHeaderBlobAnim 20s infinite alternate;
+}
+
+@keyframes underHeaderBlobAnim {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0.1;
+    }
+}
+
+#aboutBlobCtn {
+    height: 60vh;
+    display: flex;
+    justify-content: end;
+    filter: blur(100px);
+    opacity: 0.75;
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
+}
+
+#aboutBlob {
+    height: 200%;
+    width: 70vw;
+    margin: -20% -10% 0 0;
+
+    animation: aboutBlobAnim 25s infinite alternate;
+}
+
+@keyframes aboutBlobAnim {
+    from {
+        transform: rotate(40deg);
+    }
+
+    to {
+        transform: rotate(-40deg);
+    }
+}
+
+#skillsBlobCtn {
+    position: relative;
+    height: 30vh;
+    display: flex;
+    justify-content: end;
+    filter: blur(100px);
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
+}
+
+#skillsBlob {
+    position: absolute;
+    top: -15vw;
+    left: 0;
+    height: 250%;
+
+    animation: skillsBlobAnim 20s infinite alternate;
+}
+
+@keyframes skillsBlobAnim {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(1000px);
+    }
+
+    to {
+        opacity: 0.75;
+        transform: scale(1.5);
+    }
+}
+
+#projectsBlobCtn {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: end;
+    filter: blur(100px);
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
+}
+
+#projectsBlob {
+    height: 100%;
+    margin-top: -5vw;
+    margin-right: -10vw;
+
+    animation: projectsBlobAnim 25s infinite alternate;
+}
+
+@keyframes projectsBlobAnim {
+    from {
+        transform: rotate(20deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
+}
+
+/* Cross pattern */
+
+.crossPatternCtn {
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -200;
+}
+
+/* Grain */
+
+.grain {
+    height: 100%;
+    background-color: #060612;
+    opacity: 20%;
+    z-index: -100;
+}
+
+.grain:after {
+    content: "";
+    background-image: url("https://arc.net/noise-light.png");
+    height: var(--grain-height);
+    width: 100%;
+    left: -100%;
+    top: -100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.75;
+}

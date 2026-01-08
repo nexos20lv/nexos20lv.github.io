@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "brand": "Pierre",
+    "about": "Chi Sono",
+    "skills": "Competenze",
+    "projects": "Progetti",
+    "contact": "Contatto",
+    "contact_btn": "Contattami"
+  },
+  "hero": {
+    "title": "Ciao, sono Pierre",
+    "subtitle": "Sviluppatore Web ed Entusiasta di Tecnologia",
+    "cta": "Scopri di più su di me"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "p1": "Appassionato di sviluppo e nuove tecnologie, creo soluzioni innovative ed efficienti. Il mio approccio combina creatività e rigore tecnico per soddisfare le esigenze dei miei progetti.",
+    "p2": "Attualmente al primo anno STI2D al liceo Paul Duez, miro a una scuola di ingegneria per approfondire le mie competenze nello sviluppo software e nei sistemi embedded.",
+    "location": "Con sede a Cambrai, Francia"
+  },
+  "skills": {
+    "title": "Competenze"
+  },
+  "contact": {
+    "title": "Contattami",
+    "subtitle": "Parliamo del tuo progetto",
+    "desc": "Non esitare a contattarmi per discutere le tue idee o semplicemente per salutare!",
+    "footer": "Progettato e sviluppato da me stesso con ❤️",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "send": "Inviare"
+    }
+  },
+  "projects": {
+    "title": "Progetti",
+    "viewDetails": "Vedi Dettagli",
+    "closeModal": "Chiudi",
+    "project1": {
+      "title": "Conferenze di Orientamento Paul Duez",
+      "desc": "Un sito web completo per gestire le iscrizioni alle conferenze di orientamento, facilitare il monitoraggio degli studenti e ottimizzare l'organizzazione.",
+      "modalTitle": "Conferenze di Orientamento al Liceo Paul Duez",
+      "modalDesc": "Ho creato un sito web per gestire le iscrizioni alla settimana di orientamento e facilitare il lavoro dell'insegnante responsabile dell'orientamento e dell'organizzazione di questa settimana. Permette anche un monitoraggio per gli insegnanti di classe sugli studenti delle loro classi e di sapere a quali conferenze lo studente ha partecipato.<br><br>Tecnologie utilizzate: HTML, CSS, JavaScript, PHP",
+      "linkSite": "Vedi Sito"
+    },
+    "project2": {
+      "title": "Server Minecraft EclozionMC",
+      "desc": "Un server Minecraft PvP Faction personalizzato con plugin custom ed eventi della comunità.",
+      "modalTitle": "Server Minecraft EclozionMC",
+      "modalDesc": "Un server Minecraft PvP Faction personalizzato con plugin custom per la gestione delle fazioni, missioni ed eventi della comunità. Il server ha un sito web dedicato per presentazione e gestione della comunità.",
+      "linkSite": "Vedi Sito"
+    },
+    "project3": {
+      "title": "La Guerra delle Capsule",
+      "desc": "Il mio primo videogioco, un FPS multiplayer sviluppato con il motore Godot.",
+      "modalTitle": "La Guerra delle Capsule",
+      "modalDesc": "Questo progetto è il primo videogioco che ho creato, è un gioco di tipo FPS giocabile in multiplayer con grafica semplice. Sviluppato con il motore di gioco Godot e codificato in GDScript, mi ha permesso di imparare le basi dello sviluppo di videogiochi e della programmazione orientata agli oggetti.",
+      "linkGithub": "Vedi su GitHub"
+    },
+    "project4": {
+      "title": "Portfolio",
+      "desc": "Questo stesso sito! Una vetrina interattiva e moderna sviluppata senza framework.",
+      "modalTitle": "Portfolio Personale",
+      "modalDesc": "Questo portfolio è una vetrina delle mie competenze e progetti. È stato progettato per essere moderno, performante e completamente responsive.<br><br><strong>Caratteristiche principali:</strong><br>- Tema viola \"neon\" con glassmorphism.<br>- Integrazione API Lanyard per stato Discord in tempo reale.<br>- Carosello 3D circolare per progetti.<br>- Animazioni fluide e design unico.<br><br>Tecnologie utilizzate: HTML5, CSS3, Vanilla JS.",
+      "linkGithub": "Codice Sorgente",
+      "linkLive": "Vedi Live"
+    }
+  }
+}

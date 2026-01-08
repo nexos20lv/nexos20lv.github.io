@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Cache Control -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Portfolio de Pierre Bouteman - Développeur Web & Passionné de Technologie. Découvrez mes projets, mes compétences et mon expérience." />
+    <meta name="keywords"
+        content="Pierre Bouteman, Développeur Web, Portfolio, HTML, CSS, JavaScript, Frontend, Backend, Fullstack, France" />
+    <meta name="author" content="Pierre Bouteman" />
+    <meta name="theme-color" content="#a784cd" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nexos20lv.github.io/" />
+    <meta property="og:title" content="Pierre Bouteman | Portfolio" />
+    <meta property="og:description"
+        content="Portfolio de Pierre Bouteman - Développeur Web & Passionné de Technologie. Découvrez mes projets, mes compétences et mon expérience." />
+    <meta property="og:image" content="https://nexos20lv.github.io/assets/img/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nexos20lv.github.io/" />
+    <meta property="twitter:title" content="Pierre Bouteman | Portfolio" />
+    <meta property="twitter:description"
+        content="Portfolio de Pierre Bouteman - Développeur Web & Passionné de Technologie. Découvrez mes projets, mes compétences et mon expérience." />
+    <meta property="twitter:image" content="https://nexos20lv.github.io/assets/img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./assets/img/logo.png">
+    <link rel="apple-touch-icon" href="./assets/img/logo.png">
+    <link rel="preload" as="image" href="./assets/img/logo.png">
+    <link rel="canonical" href="https://nexos20lv.github.io/">
+    <link rel="stylesheet" href="./assets/css/main.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/background.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/animations.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/responsive.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/carousel-responsive.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/modals.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/modal-links.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/social-links.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/loader.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/blog.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/lanyard.css?v=2.0" />
+    <!-- Custom UI styles merged into main.css -->
+    <title>Pierre Bouteman | Portfolio</title>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "name": "Pierre Bouteman",
+                    "url": "https://nexos20lv.github.io/",
+                    "sameAs": [
+                        "https://github.com/nexos20lv",
+                        "https://www.instagram.com/btm.pierre/"
+                    ],
+                    "jobTitle": "Web Developer",
+                    "image": "https://nexos20lv.github.io/assets/img/logo.png",
+                    "description": "Développeur Web créant des sites performants et accessibles."
+                },
+                {
+                    "@type": "WebSite",
+                    "url": "https://nexos20lv.github.io/",
+                    "name": "Pierre Bouteman | Portfolio",
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Pierre Bouteman"
+                    }
+                }
+            ]
+        }
+        </script>
+</head>
+
+<body>
+    <script src="./assets/js/language.js?v=2.1"></script>
+    <script src="./assets/js/custom-ui.js?v=2.1"></script>
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <p class="loader-text" id="loader-text">Chargement...</p>
+    </div>
+    <div class="background">
+        <div class="crossPatternCtn">
+            <img src="./assets/img/background/crossPattern.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+        </div>
+        <div class="grain" width="100%" height="100%"></div>
+        <div class="headerBlobsCtn">
+            <div class="blobCtn" id="headerBlobCtn">
+                <img class="blob" id="headerBlob" src="./assets/img/background/blobs/header.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+            </div>
+            <div class="blobCtn" id="underHeaderBlobCtn">
+                <img class="blob" id="underHeaderBlob" src="./assets/img/background/blobs/underHeader.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+            </div>
+        </div>
+        <div class="blobCtn" id="aboutBlobCtn">
+            <img class="blob" id="aboutBlob" src="./assets/img/background/blobs/about.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+        </div>
+        <div class="blobCtn" id="skillsBlobCtn">
+            <img class="blob" id="skillsBlob" src="./assets/img/background/blobs/skills.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+        </div>
+        <div class="blobCtn" id="projectsBlobCtn">
+            <img class="blob" id="projectsBlob" src="./assets/img/background/blobs/projects.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
+        </div>
+    </div>
+    <nav class="gradientBorder">
+        <ul class="navList">
+            <li><a href="#hero" class="link gradientText" data-i18n="nav.brand">Pierre</a></li>
+            <li><a href="#about" class="link" data-i18n="nav.about">À Propos</a></li>
+            <li><a href="#skills" class="link" data-i18n="nav.skills">Compétences</a></li>
+            <li><a href="#projects" class="link" data-i18n="nav.projects">Projets</a></li>
+            <li style="margin-left:auto;" class="nav-controls" aria-hidden="false">
+                <div class="lang-wrapper">
+                    <button id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false"
+                        aria-label="Changer la langue">🌐</button>
+                    <ul id="lang-menu" class="lang-menu" role="menu" aria-label="Langues">
+                        <li role="menuitem" data-lang="auto">🌐 AUTO</li>
+                        <li role="menuitem" data-lang="en">🇬🇧 EN</li>
+                        <li role="menuitem" data-lang="fr">🇫🇷 FR</li>
+                        <li role="menuitem" data-lang="es">🇪🇸 ES</li>
+                        <li role="menuitem" data-lang="de">🇩🇪 DE</li>
+                        <li role="menuitem" data-lang="it">🇮🇹 IT</li>
+                        <li role="menuitem" data-lang="pt">🇵🇹 PT</li>
+                        <li role="menuitem" data-lang="ru">🇷🇺 RU</li>
+                        <li role="menuitem" data-lang="zh-CN">🇨🇳 ZH</li>
+                        <li role="menuitem" data-lang="ar">🇸🇦 AR</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <header id="hero">
+        <div class="mainTexts">
+            <h1 class="gradientText hero-animated" data-i18n="hero.title">Salut, je suis Pierre</h1>
+            <h2 class="hero-animated hero-animated" data-i18n="hero.subtitle">Développeur Web & Passionné de Technologie
+            </h2>
+
+            <div class="contact-lanyard-embedded">
+                <div class="lanyard-header">
+                    <img id="lanyard-avatar" src="./assets/img/logo.png" alt="Avatar" loading="eager" decoding="async">
+                    <div class="lanyard-user-info">
+                        <p id="lanyard-username">Loading...</p>
+                        <p id="lanyard-custom-status" class="custom-status"></p>
+                        <div class="lanyard-status">
+                            <span id="lanyard-status-indicator"></span>
+                            <p id="lanyard-status-text">Offline</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="lanyard-activities-container">
+                    <!-- Primary Activity -->
+                    <div id="lanyard-primary-activity" class="lanyard-activity" style="display: none;">
+                        <img id="lanyard-primary-img" src="" alt="Activity" loading="lazy" decoding="async">
+                        <div class="lanyard-activity-details">
+                            <p id="lanyard-primary-name" class="activity-name">Spotify</p>
+                            <p id="lanyard-primary-details" class="activity-details">Song Title</p>
+                            <p id="lanyard-primary-state" class="activity-state">Artist</p>
+                        </div>
+                    </div>
+
+                    <!-- More Activities Button -->
+                    <div id="lanyard-more" class="lanyard-more" style="display: none;">
+                        <span id="lanyard-more-text">2 autres activités</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Other Activities List -->
+                    <div id="lanyard-other-activities" class="lanyard-other-list" style="display: none;">
+                        <!-- Dynamic content -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://github.com/nexos20lv" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/btm.pierre/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://discord.gg/g3A9pVDTUJ" target="_blank" rel="noopener noreferrer" aria-label="Discord Communautaire">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#contact" aria-label="Contact">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="about">
+        <div class="aboutText gradientBorder animated">
+            <h2 class="sectionTitle gradientText animated" data-i18n="about.title">À Propos</h2>
+            <p class="animated" data-i18n="about.p1">Passionné par le développement et les nouvelles technologies, je
+                crée des solutions
+                innovantes et performantes. Mon approche combine créativité et rigueur technique pour répondre aux
+                besoins de mes projets.</p>
+            <p class="animated" data-i18n="about.p2">Actuellement en Première STI2D au lycée Paul Duez, je vise une
+                école d'ingénieur pour
+                approfondir mes compétences en développement logiciel et systèmes embarqués.</p>
+            <p class="animated">
+                <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="vertical-align: middle; margin-right: 8px;">
+                    <defs>
+                        <linearGradient id="pinGradient" x1="9" y1="0" x2="9" y2="23" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#e3d1f5" />
+                            <stop offset="1" stop-color="#a784cd" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M9 0C4.02944 0 0 4.02944 0 9C0 14.508 9 23 9 23C9 23 18 14.508 18 9C18 4.02944 13.9706 0 9 0ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z"
+                        fill="url(#pinGradient)" />
+                </svg>
+                <span data-i18n="about.location">Basé à Cambrai, France</span>
+            </p>
+        </div>
+        <div class="aboutImgWrapper gradientBorder animated">
+                <div class="aboutImg">
+                <img class="animated" src="./assets/img/mii.png" alt="Mon Mii" loading="lazy" decoding="async" />
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2 class="sectionTitle gradientText animated" data-i18n="skills.title">Compétences</h2>
+
+        <div class="skills-grid animated">
+        </div>
+    </section>
+    <section id="projects">
+        <h2 class="sectionTitle gradientText animated" data-i18n="projects.title">Projets</h2>
+        <div class="carouselContainer animated" id="projects-container">
+            <div class="projects-carousel">
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="contact-container">
+            <h2 class="sectionTitle gradientText animated" data-i18n="contact.title">Me Contacter</h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.subtitle">Parlons de votre projet</h3>
+                    <p data-i18n="contact.desc">N'hésitez pas à me contacter pour discuter de vos idées ou simplement
+                        pour dire bonjour !</p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:pierre.bouteman@icloud.com" class="contact-method">
+                            <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="method-details">
+                                <span>Email</span>
+                                <span class="method-value">pierre.bouteman@icloud.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form gradientBorder">
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.form.name">Nom</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact.form.email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.form.message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Votre message..."
+                            rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span data-i18n="contact.form.send">Envoyer</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+            <!-- Footer -->
+            <footer>
+                <p>&copy; <span id="year"></span> Pierre Bouteman. All rights reserved.</p>
+            </footer>
+
+            <!-- Scripts -->
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+            <script src="./assets/js/animations.js?v=2.0"></script>
+            <script src="./assets/js/particles.js?v=2.0"></script>
+            <script src="./assets/js/skills-stats.js?v=2.0"></script>
+            <script src="./assets/js/skills.js?v=2.0"></script>
+            <script src="./assets/js/skill-bars-animation.js?v=2.0"></script>
+
+            <script src="./assets/js/projects-carousel.js?v=2.0"></script>
+            <script src="./assets/js/modals.js?v=2.0"></script>
+            <script src="./assets/js/grainHeight.js?v=2.0"></script>
+            <script src="./assets/js/loader-messages.js?v=2.0"></script>
+            <script src="./assets/js/loader.js?v=2.0"></script>
+            <script src="./assets/js/hash-reset.js?v=2.0"></script>
+            <script src="./assets/js/lanyard.js?v=2.0"></script>
+
+            <script src="./assets/js/parallax.js?v=2.0"></script>
+            <script src="./assets/js/nav-scroll.js?v=2.0"></script>
+            <script src="./assets/js/contact.js?v=2.0"></script>
+
+
+
+            <script src="./assets/js/main.js?v=2.0"></script>
+            <script>
+                if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('./service-worker.js')
+                            .then(registration => {
+                                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                            })
+                            .catch(err => {
+                                console.log('ServiceWorker registration failed: ', err);
+                            });
+                    });
+                }
+            </script>
+</body>
+
+</html>

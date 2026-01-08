@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "brand": "皮埃尔",
+    "about": "关于",
+    "skills": "技能",
+    "projects": "项目",
+    "contact": "联系",
+    "contact_btn": "联系我"
+  },
+  "hero": {
+    "title": "你好，我是皮埃尔",
+    "subtitle": "Web开发者和技术爱好者",
+    "cta": "了解更多关于我"
+  },
+  "about": {
+    "title": "关于",
+    "p1": "热衷于开发和新技术，我创建创新和高效的解决方案。我的方法结合了创造力和技术严谨性，以满足我的项目需求。",
+    "p2": "目前在保罗·杜埃兹高中STI2D一年级，我的目标是进入工程学院，深化我在软件开发和嵌入式系统方面的技能。",
+    "location": "位于法国康布雷"
+  },
+  "skills": {
+    "title": "技能"
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "让我们谈谈你的项目",
+    "desc": "随时联系我讨论您的想法，或者只是打个招呼！",
+    "footer": "由我自己设计和开发 ❤️",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "信息",
+      "send": "发送"
+    }
+  },
+  "projects": {
+    "title": "项目",
+    "viewDetails": "查看详情",
+    "closeModal": "关闭",
+    "project1": {
+      "title": "保罗·杜埃兹职业指导会议",
+      "desc": "一个完整的网站，用于管理职业指导会议的注册，促进学生跟踪和优化组织。",
+      "modalTitle": "保罗·杜埃兹高中职业指导会议",
+      "modalDesc": "我创建了一个网站来管理职业指导周的注册，并方便负责职业指导和组织这一周的教师的工作。它还允许班主任跟踪其班级的学生，并了解学生参加了哪些会议。<br><br>使用的技术：HTML、CSS、JavaScript、PHP",
+      "linkSite": "查看网站"
+    },
+    "project2": {
+      "title": "Minecraft服务器EclozionMC",
+      "desc": "一个定制的Minecraft PvP派系服务器，具有自定义插件和社区活动。",
+      "modalTitle": "Minecraft服务器EclozionMC",
+      "modalDesc": "一个定制的Minecraft PvP派系服务器，具有用于派系管理、任务和社区活动的自定义插件。该服务器有一个专用网站用于展示和社区管理。",
+      "linkSite": "查看网站"
+    },
+    "project3": {
+      "title": "胶囊战争",
+      "desc": "我的第一个视频游戏，一个使用Godot引擎开发的多人FPS。",
+      "modalTitle": "胶囊战争",
+      "modalDesc": "这个项目是我创建的第一个视频游戏，这是一款可以在多人模式下玩的FPS类型游戏，具有简单的图形。使用Godot游戏引擎开发并用GDScript编码，它使我能够学习视频游戏开发和面向对象编程的基础知识。",
+      "linkGithub": "在GitHub上查看"
+    },
+    "project4": {
+      "title": "作品集",
+      "desc": "这个网站本身！一个没有框架开发的交互式和现代化展示。",
+      "modalTitle": "个人作品集",
+      "modalDesc": "这个作品集是我的技能和项目的展示。它被设计为现代、高性能和完全响应式。<br><br><strong>主要特点：</strong><br>- 带有玻璃态的紫色\"霓虹\"主题。<br>- 集成Lanyard API实现实时Discord状态。<br>- 项目的3D圆形轮播。<br>- 流畅的动画和独特的设计。<br><br>使用的技术：HTML5、CSS3、Vanilla JS。",
+      "linkGithub": "源代码",
+      "linkLive": "在线查看"
+    }
+  }
+}

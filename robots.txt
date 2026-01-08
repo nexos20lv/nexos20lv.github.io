@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nexos20lv.github.io/sitemap.xml

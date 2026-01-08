@@ -1,0 +1,982 @@
+/* Extra Small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+    nav {
+        width: 92vw;
+        top: 15px;
+        height: 56px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 18px;
+    }
+
+    /* Hide nav links on mobile */
+    .navList>li:not(:first-child):not(:last-child) {
+        display: none;
+    }
+
+    nav.menu-open {
+        background-color: rgba(13, 6, 18, 0.95) !important;
+        backdrop-filter: blur(20px) !important;
+        border-radius: 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 20px;
+    }
+
+    .navList {
+        padding: 0;
+        gap: 0;
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .navList>li:first-child {
+        font-size: 22px;
+        position: static;
+        transform: none;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .navList>li:nth-child(3) {
+        width: 100%;
+        order: 3;
+    }
+
+    .burger-menu {
+        display: flex !important;
+        position: static;
+        transform: none;
+        margin-left: auto;
+    }
+
+    nav li {
+        font-size: 16px;
+    }
+
+    .navLinks {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0 0 0;
+        margin: 0;
+        opacity: 0;
+        display: none;
+        transition: opacity 0.3s ease;
+        background: transparent;
+    }
+
+    .navLinks.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        align-items: center;
+    }
+
+    .navLinks li {
+        text-align: center;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .navLinks.active>li:last-child {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navList>li:last-child {
+        display: none;
+    }
+
+    nav.menu-open.gradientBorder::after {
+        display: block !important;
+        border-radius: 20px;
+    }
+
+    #hero {
+        padding: 0 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* Ajout pour centrer les éléments enfants comme le CTA */
+    }
+
+    .mainTexts {
+        margin-top: 80px;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+    }
+
+    .mainTexts h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+        text-align: center;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .mainTexts h2 {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+
+    .contact-lanyard-embedded {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .lanyard-header {
+        gap: 12px;
+    }
+
+    #lanyard-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    #lanyard-username {
+        font-size: 15px;
+    }
+
+    .lanyard-status p {
+        font-size: 12px;
+    }
+
+    #lanyard-status-indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .social-links {
+        gap: 15px;
+        margin-top: 15px;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .social-links a {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .ctaAbout {
+        display: none;
+    }
+
+    #about {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 70vh;
+        padding: 40px 20px;
+        gap: 35px;
+    }
+
+    .aboutText {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        padding: 32px 24px;
+    }
+
+    .aboutText p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .aboutImgWrapper {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+
+    .aboutImgWrapper::after {
+        border-radius: 100%;
+    }
+
+    .aboutImg {
+        height: 100%;
+        width: 99%;
+        border-radius: 100%;
+    }
+
+    #skills {
+        height: auto;
+        min-height: 40vh;
+        padding: 40px 20px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .skill-card {
+        padding: 18px 12px;
+    }
+
+    .skill-card i {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .skill-card h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .infiniteCarousel {
+        max-width: 90%;
+    }
+
+    .carouselContainer {
+        gap: 32px;
+    }
+
+    .carouselLabel {
+        font-size: 16px;
+    }
+
+    #projects {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+        margin-bottom: 10vh;
+    }
+
+    .projects-carousel-container {
+        padding: 20px 0;
+    }
+
+    .project-card {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .projectImgWrapper {
+        height: 180px;
+    }
+
+    .projectInfos {
+        padding: 20px 18px;
+    }
+
+    .projectTitle {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .projectDesc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .projectButton {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    #contact {
+        flex-direction: column;
+        height: auto;
+        min-height: 30vh;
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .contact-link {
+        display: none;
+    }
+
+    .contact-mail {
+        font-size: 20px;
+        text-align: center;
+        word-break: break-word;
+        padding: 0 10px;
+    }
+
+    .contact-main h3 {
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    .contact-main p {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    #headerBlobCtn {
+        transform: translate(-30%, -50%);
+    }
+
+    #aboutBlobCtn {
+        height: 40vh;
+    }
+
+    #aboutBlob {
+        width: 90vw;
+    }
+
+    dialog[open] {
+        width: 90vw;
+        max-width: 90vw;
+        margin: 20px auto;
+        padding: 25px 20px;
+    }
+
+    dialog h3 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    dialog p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .modal-links {
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .modal-link {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Ensure the language control (last nav item) is visible on mobile breakpoints
+   Some earlier rules hide the last-child; override them here with higher specificity. */
+@media (max-width: 480px) {
+    .navList>li:last-child {
+        display: list-item !important;
+        visibility: visible !important;
+    }
+}
+
+@media (min-width:481px) and (max-width:768px) {
+    .navList>li:last-child {
+        display: list-item !important;
+        visibility: visible !important;
+    }
+}
+
+
+/* Small devices (landscape phones, 481px and up) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        width: 80vw;
+        top: 30px;
+        height: auto;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    /* Hide nav links on tablet */
+    .navList>li:not(:first-child):not(:last-child) {
+        display: none;
+    }
+
+    nav.menu-open {
+        background-color: var(--background-color) !important;
+        backdrop-filter: none !important;
+    }
+
+    nav.menu-open .navList {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        position: relative;
+    }
+
+    nav.menu-open.gradientBorder::after {
+        display: none !important;
+    }
+
+    .navList {
+        gap: 0;
+        flex-direction: column;
+        position: relative;
+        padding: 15px 20px;
+    }
+
+    .navList>li:first-child {
+        font-size: 20px;
+        margin-right: 0;
+        margin-bottom: 0;
+        align-self: flex-start;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger-menu {
+        display: flex !important;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .navLinks {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 30px 30px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .navLinks.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        background: var(--background-color);
+    }
+
+    .navLinks li {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .navLinks li:last-child {
+        display: unset;
+    }
+
+    .navList>li:last-child {
+        display: none;
+    }
+
+    nav.menu-open {
+        height: auto;
+    }
+
+    /* Hero Section */
+    .mainTexts h1 {
+        font-size: 70px;
+        letter-spacing: -4px;
+    }
+
+    .mainTexts h2 {
+        font-size: 20px;
+    }
+
+    /* About Section */
+    #about {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 80vh;
+        gap: 40px;
+    }
+
+    .aboutText {
+        max-width: 90%;
+        height: auto;
+        min-height: 350px;
+        padding: 40px 30px;
+    }
+
+    .aboutImgWrapper {
+        width: 50%;
+        height: 50%;
+        border-radius: 100%;
+    }
+
+    .aboutImgWrapper::after {
+        border-radius: 100%;
+    }
+
+    .aboutImg {
+        height: 100%;
+        width: 99%;
+        border-radius: 100%;
+    }
+
+    /* Skills Section */
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .infiniteCarousel {
+        max-width: 90%;
+    }
+
+    /* Projects Section */
+    #projects {
+        height: auto;
+        min-height: 120vh;
+        margin-bottom: 10vh;
+    }
+
+    .projectsCtn {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        justify-items: center;
+    }
+
+    .projectCard {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* Contact Section */
+    #contact {
+        flex-direction: column;
+        height: auto;
+        min-height: 25vh;
+        gap: 40px;
+    }
+
+    .contact-link {
+        display: none;
+    }
+
+    .contact-mail {
+        font-size: 32px;
+    }
+
+    /* Modals */
+    dialog[open] {
+        width: 85vw;
+        max-width: 500px;
+    }
+}
+
+/* Medium devices (tablets, 769px and up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Navigation */
+    nav {
+        width: 80vw;
+    }
+
+    /* Hero Section */
+    .mainTexts h1 {
+        font-size: 85px;
+        letter-spacing: -5px;
+    }
+
+    /* About Section */
+    #about {
+        gap: 40px;
+    }
+
+    .aboutText {
+        max-width: 50vw;
+        padding: 40px;
+    }
+
+    .aboutImgWrapper {
+        max-width: 40vw;
+    }
+
+    /* Projects Section */
+    #projects {
+        height: auto;
+        min-height: 120vh;
+        padding: 20px;
+        margin-bottom: 10vh;
+    }
+
+    .projectsCtn {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+    }
+
+    .projectCard {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    /* Contact Section */
+    .contact-mail {
+        font-size: 36px;
+    }
+
+    /* Modals */
+    dialog[open] {
+        width: 70vw;
+        max-width: 600px;
+    }
+}
+
+/* Large devices (desktops, 1025px and up) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    /* Navigation */
+    nav {
+        width: 60vw;
+    }
+
+    /* Projects Section */
+
+    #projects {
+        margin-bottom: 10vh;
+    }
+
+    .projectsCtn {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+    }
+
+    .projectCard {
+        width: 400px;
+        flex: 0 0 auto;
+    }
+
+    .projectCard:nth-child(3) {
+        flex-basis: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Extra Large devices (large desktops, 1441px and up) */
+@media (min-width: 1441px) {
+
+    /* Navigation */
+    nav {
+        width: 50vw;
+        max-width: 800px;
+    }
+
+    /* Sections */
+    #about {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    #projects {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    .projectsCtn {
+        max-width: 1400px;
+    }
+
+    #contact {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Height-specific adjustments for very short screens */
+@media (max-height: 600px) and (min-width: 769px) {
+    #hero {
+        height: 100vh;
+    }
+
+    .mainTexts h1 {
+        font-size: 60px;
+    }
+
+    .mainTexts h2 {
+        font-size: 18px;
+    }
+
+    #about {
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .aboutText {
+        height: auto;
+        min-height: 250px;
+        padding: 30px;
+    }
+
+    .contact-instagram {
+        display: none;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    nav {
+        height: auto;
+        min-height: 50px;
+    }
+
+    .navList {
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+    }
+
+    .navList>li:first-child {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 0;
+    }
+
+    .burger-menu {
+        display: flex !important;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+
+    .navLinks {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(6, 6, 18, 0.95);
+        border-radius: 0 0 30px 30px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+        margin: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .navLinks.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navLinks li {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .navList>li:last-child {
+        display: none;
+    }
+
+    nav.menu-open .navList {
+        min-height: 180px;
+    }
+
+    .mainTexts h1 {
+        font-size: 50px;
+    }
+
+    .mainTexts h2 {
+        font-size: 16px;
+    }
+
+    #about {
+        flex-direction: row;
+        height: auto;
+        min-height: 60vh;
+        gap: 30px;
+    }
+
+    .aboutText {
+        max-width: 50%;
+        height: auto;
+        min-height: 300px;
+        padding: 30px 20px;
+    }
+
+    .aboutImgWrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .aboutImg {
+        width: 248px;
+        height: 248px;
+    }
+
+    .projectsCtn {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .projectCard {
+        width: 300px;
+        height: 350px;
+    }
+
+    .projectImg {
+        height: 150px;
+    }
+
+    .contact-instagram {
+        display: none;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .infiniteCarousel[data-animated="true"] .carouselContainer {
+        animation: none;
+    }
+
+    .burger-line {
+        transition: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .background,
+    nav,
+    .loader {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    #hero {
+        height: auto;
+    }
+}
+
+/* Burger Menu Styles */
+/* Ensure nav stays above other layers on small screens */
+nav {
+    z-index: 100000;
+}
+
+.burger-menu {
+    display: none;
+    /* Reste caché par défaut */
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    /* Ajout pour le positionner correctement */
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-menu span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    background: #e3d1f5;
+    border-radius: 1px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .25s ease-in-out;
+}
+
+.burger-menu span {
+    top: 11px;
+}
+
+.burger-menu span:before,
+.burger-menu span:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 18px;
+    background: #e3d1f5;
+    border-radius: 1px;
+    transition: .25s ease-in-out;
+}
+
+.burger-menu span:before {
+    top: -6px;
+}
+
+.burger-menu span:after {
+    top: 6px;
+}
+
+.burger-menu.active span {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.burger-menu.active span:before {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.burger-menu.active span:after {
+    top: 0;
+    transform: rotate(90deg);
+}

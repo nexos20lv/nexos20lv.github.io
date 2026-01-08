@@ -1,0 +1,75 @@
+/* Modal Links Container */
+.modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(167, 132, 205, 0.2);
+}
+
+.modal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(167, 132, 205, 0.15), rgba(167, 132, 205, 0.05));
+    border: 1px solid rgba(167, 132, 205, 0.3);
+    border-radius: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(167, 132, 205, 0.2), rgba(167, 132, 205, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-link:hover::before {
+    opacity: 1;
+}
+
+.modal-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 132, 205, 0.6);
+    box-shadow: 0 8px 20px rgba(167, 132, 205, 0.3);
+}
+
+.modal-link i {
+    font-size: 18px;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.modal-link:hover i {
+    transform: scale(1.1);
+}
+
+.modal-link span {
+    z-index: 1;
+}
+
+/* Responsive modal links */
+@media (max-width: 600px) {
+    .modal-links {
+        flex-direction: column;
+    }
+
+    .modal-link {
+        width: 100%;
+        justify-content: center;
+    }
+}

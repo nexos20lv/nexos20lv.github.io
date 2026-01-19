@@ -47,6 +47,7 @@
 .lanyard-status {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 6px;
 }
 
@@ -128,6 +129,10 @@
 
 .lanyard-more i {
     transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .lanyard-more.expanded i {

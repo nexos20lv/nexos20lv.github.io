@@ -52,6 +52,10 @@
     color: var(--accent-color);
     transition: transform 0.3s ease;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .modal-link:hover i {

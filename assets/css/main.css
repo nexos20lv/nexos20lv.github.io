@@ -934,6 +934,10 @@ img {
 .github-stat-card i {
     font-size: 36px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .stat-value {
@@ -1349,6 +1353,10 @@ img {
 .projectButton,
 .projectButton i {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .projectDetails:hover {
@@ -1403,6 +1411,10 @@ img {
 
 .carousel-nav-btn i {
     color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 /* Contact section */
@@ -1497,6 +1509,14 @@ img {
     justify-content: center;
     font-size: 24px;
     color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.method-icon i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .method-details {

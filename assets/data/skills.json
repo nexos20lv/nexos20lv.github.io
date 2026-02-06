@@ -1,62 +1,62 @@
 [
     {
-        "name": "HTML",
-        "icon": "fab fa-html5",
-        "level": 85
-    },
-    {
-        "name": "CSS",
-        "icon": "fab fa-css3-alt",
-        "level": 60
-    },
-    {
         "name": "JavaScript",
         "icon": "fab fa-js",
-        "level": 50
+        "category": "Full-Stack"
     },
     {
         "name": "Python",
         "icon": "fab fa-python",
-        "level": 80
+        "category": "Language"
+    },
+    {
+        "name": "PHP",
+        "icon": "fab fa-php",
+        "category": "Backend"
     },
     {
         "name": "Java",
         "icon": "fab fa-java",
-        "level": 40
+        "category": "Language"
+    },
+    {
+        "name": "HTML/CSS",
+        "icon": "fab fa-html5",
+        "category": "Frontend"
     },
     {
         "name": "Node.js",
         "icon": "fab fa-node-js",
-        "level": 65
+        "category": "Backend"
+    },
+    {
+        "name": "MySQL",
+        "icon": "fas fa-database",
+        "category": "Database"
     },
     {
         "name": "Git",
         "icon": "fab fa-git-alt",
-        "level": 90
-    },
-    {
-        "name": "SQL",
-        "icon": "fas fa-database",
-        "level": 65
-    },
-    {
-        "name": "Game Dev",
-        "icon": "fas fa-gamepad",
-        "level": 20
+        "category": "Tools"
     },
     {
         "name": "Linux",
         "icon": "fab fa-linux",
-        "level": 80
+        "category": "DevOps"
     },
     {
         "name": "Proxmox",
         "icon": "fas fa-server",
-        "level": 75
+        "category": "DevOps"
     },
     {
-        "name": "UI/UX",
-        "icon": "fas fa-pen-ruler",
-        "level": 70
+        "name": "Docker",
+        "icon": "fab fa-docker",
+        "category": "DevOps"
+    },
+    {
+        "name": "Godot",
+        "icon": "fas fa-gamepad",
+        "category": "Game Dev"
     }
 ]

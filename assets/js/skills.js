@@ -21,11 +21,6 @@ class SkillsManager {
                 this.container.appendChild(card);
             });
 
-            // Trigger animation if it exists
-            if (typeof animateSkillBars === 'function') {
-                animateSkillBars();
-            }
-
         } catch (error) {
             console.error('Error loading skills:', error);
             this.container.innerHTML = '<p class="error-message">Impossible de charger les compétences.</p>';
@@ -39,9 +34,7 @@ class SkillsManager {
         card.innerHTML = `
             <i class="${skill.icon} gradientText"></i>
             <h3>${skill.name}</h3>
-            <div class="skill-level-bar">
-                <div class="skill-level" data-level="${skill.level}"></div>
-            </div>
+            <div class="skill-category">${skill.category}</div>
         `;
 
         return card;

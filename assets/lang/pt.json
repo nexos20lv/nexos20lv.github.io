@@ -2,29 +2,29 @@
   "nav": {
     "brand": "Pierre",
     "about": "Sobre",
-    "skills": "Competências",
+    "skills": "Competencias",
     "projects": "Projetos",
     "contact": "Contato",
     "contact_btn": "Contacte-me"
   },
   "hero": {
-    "title": "Olá, sou Pierre",
-    "subtitle": "Desenvolvedor Web & Entusiasta de Tecnologia",
+    "title": "Ola, sou Pierre",
+    "subtitle": "Desenvolvedor Full-Stack e SysAdmin",
     "cta": "Saiba mais sobre mim"
   },
   "about": {
     "title": "Sobre",
-    "p1": "Apaixonado por desenvolvimento e novas tecnologias, crio soluções inovadoras e eficientes. Minha abordagem combina criatividade e rigor técnico para atender às necessidades dos meus projetos.",
-    "p2": "Atualmente no primeiro ano STI2D no liceu Paul Duez, viso uma escola de engenharia para aprofundar minhas habilidades em desenvolvimento de software e sistemas embarcados.",
-    "location": "Baseado em Cambrai, França"
+    "p1": "Desenvolvedor apaixonado criando solucoes web e de software usadas por centenas de usuarios.",
+    "p2": "Estudante de STI2D opcao SIN no Lycee Paul Duez. Especializado em desenvolvimento full-stack e administracao de sistemas. As vezes vibecode, mas nao faco so isso.",
+    "location": "Cambrai, Franca • Disponivel para estagios"
   },
   "skills": {
-    "title": "Competências"
+    "title": "Competencias"
   },
   "contact": {
-    "title": "Contate-me",
+    "title": "Contato",
     "subtitle": "Vamos falar sobre o seu projeto",
-    "desc": "Sinta-se à vontade para entrar em contato comigo para discutir suas ideias ou apenas para dizer olá!",
+    "desc": "Fique a vontade para me contatar para discutir suas ideias ou apenas dizer ola.",
     "footer": "Projetado e desenvolvido por mim mesmo com ❤️",
     "form": {
       "name": "Nome",
@@ -38,32 +38,47 @@
     "viewDetails": "Ver Detalhes",
     "closeModal": "Fechar",
     "project1": {
-      "title": "Conferências de Orientação Paul Duez",
-      "desc": "Um site completo para gerenciar inscrições em conferências de orientação, facilitar o acompanhamento de alunos e otimizar a organização.",
-      "modalTitle": "Conferências de Orientação no Liceu Paul Duez",
-      "modalDesc": "Criei um site para gerenciar as inscrições na semana de orientação e facilitar o trabalho do professor responsável pela orientação e organização desta semana. Também permite acompanhamento para professores principais sobre os alunos de suas turmas e saber quais conferências o aluno participou.<br><br>Tecnologias utilizadas: HTML, CSS, JavaScript, PHP",
-      "linkSite": "Ver Site"
+      "title": "Conferencias de Orientacao Paul Duez",
+      "desc": "Sistema completo de gestao de inscricoes para 400+ alunos com interface admin, exportacoes CSV e acompanhamento em tempo real.",
+      "modalTitle": "Plataforma de Gestao de Conferencias de Orientacao",
+      "modalDesc": "Solucao web completa desenvolvida para o Lycee Paul Duez para gerenciar a inscricao de mais de 400 alunos nas conferencias de orientacao.<br><br><strong>Recursos principais:</strong><br>- Sistema de registro com autenticacao segura<br>- Dashboard admin com estatisticas em tempo real<br>- Gestao de horarios e capacidade das salas<br>- Exportacao de dados em CSV para professores<br>- Interface de acompanhamento para professores principais<br>- Sistema de notificacoes por email<br><br><strong>Impacto:</strong> Usado por 400+ alunos e 50+ professores, reducao de 80% no tempo de gestao administrativa.<br><br>Tecnologias: PHP 8, MySQL, JavaScript, HTML/CSS, Chart.js",
+      "linkSite": "Ver site"
     },
     "project2": {
-      "title": "Servidor Minecraft EclozionMC",
-      "desc": "Um servidor Minecraft PvP Faction personalizado com plugins customizados e eventos comunitários.",
-      "modalTitle": "Servidor Minecraft EclozionMC",
-      "modalDesc": "Um servidor Minecraft PvP Faction personalizado com plugins customizados para gestão de facções, missões e eventos comunitários. O servidor possui um site dedicado para apresentação e gestão da comunidade.",
-      "linkSite": "Ver Site"
-    },
-    "project3": {
-      "title": "A Guerra das Cápsulas",
-      "desc": "Meu primeiro videogame, um FPS multiplayer desenvolvido com o motor Godot.",
-      "modalTitle": "A Guerra das Cápsulas",
-      "modalDesc": "Este projeto é o primeiro videogame que criei, é um jogo tipo FPS jogável em multiplayer com gráficos simples. Desenvolvido com o motor de jogo Godot e codificado em GDScript, permitiu-me aprender os fundamentos do desenvolvimento de videogames e programação orientada a objetos.",
+      "title": "Nexaria Launcher",
+      "desc": "Launcher Minecraft moderno em Java com auto-update, gestao de mods e autenticacao Microsoft.",
+      "modalTitle": "Nexaria Launcher - Launcher Minecraft Personalizado",
+      "modalDesc": "Launcher personalizado para servidor Minecraft desenvolvido em Java com interface grafica moderna.<br><br><strong>Recursos:</strong><br>- Sistema de auto-atualizacao automatica<br>- Autenticacao Microsoft/Mojang<br>- Gestao inteligente de mods e resourcepacks<br>- Interface moderna e fluida<br>- Otimizacao de memoria com configuracoes avancadas<br>- Multiplos perfis e versoes<br><br><strong>Tecnologias:</strong> Java 17, JavaFX, JSON, API Mojang<br><br>⭐ 1 estrela no GitHub",
       "linkGithub": "Ver no GitHub"
     },
+    "project3": {
+      "title": "EclozionMC - Site e Servidor",
+      "desc": "Ecossistema completo: servidor Minecraft PvP-Faction + site + loja + sistema de plugins customizados.",
+      "modalTitle": "EclozionMC - Ecossistema Gaming Completo",
+      "modalDesc": "Projeto em larga escala que combina desenvolvimento de servidor de jogo e aplicacoes web para uma comunidade de jogadores.<br><br><strong>Componentes desenvolvidos:</strong><br><br><strong>Site:</strong><br>- Design moderno com animacoes<br>- Sistema de votacao com recompensas<br>- Rankings de jogadores em tempo real<br>- Integracao com API do servidor Minecraft<br><br><strong>Servidor Minecraft:</strong><br>- Modo PvP-Faction otimizado<br>- Plugins Java/Spigot customizados<br>- Sistema de economia e quests<br>- Eventos automaticos<br><br><strong>Tecnologias:</strong> Java (Spigot), PHP, MySQL, JavaScript, API Minecraft",
+      "linkSite": "Ver site"
+    },
     "project4": {
-      "title": "Portfólio",
-      "desc": "Este mesmo site! Uma vitrine interativa e moderna desenvolvida sem framework.",
-      "modalTitle": "Portfólio Pessoal",
-      "modalDesc": "Este portfólio é uma vitrine de minhas habilidades e projetos. Foi projetado para ser moderno, eficiente e totalmente responsivo.<br><br><strong>Recursos principais:</strong><br>- Tema roxo \"neon\" com glassmorphism.<br>- Integração da API Lanyard para status do Discord em tempo real.<br>- Carrossel 3D circular para projetos.<br>- Animações suaves e design único.<br><br>Tecnologias utilizadas: HTML5, CSS3, Vanilla JS.",
-      "linkGithub": "Código Fonte",
+      "title": "AzureLab Dashboard",
+      "desc": "Dashboard de administracao para infraestrutura de servidores com monitoramento, gestao de usuarios e logs em tempo real.",
+      "modalTitle": "AzureLab Dashboard - Painel de Administracao",
+      "modalDesc": "Interface completa de administracao para gerenciar infraestrutura e servicos.<br><br><strong>Recursos:</strong><br>- Monitoramento em tempo real (CPU, RAM, disco, rede)<br>- Gestao multiusuario com papeis<br>- Logs do sistema centralizados<br>- Controle de servicos (iniciar/parar)<br>- Alertas automaticos via webhook do Discord<br>- Estatisticas e graficos detalhados<br>- Interface responsiva e moderna<br><br><strong>Stack tecnico:</strong> PHP 8, MySQL, JavaScript (Chart.js), API REST, WebSockets<br><br>Implantado em infraestrutura Proxmox com Docker",
+      "linkGithub": "Ver no GitHub"
+    },
+    "project5": {
+      "title": "A Guerra das Capsulas",
+      "desc": "FPS multiplayer completo desenvolvido com Godot Engine: networking, fisica 3D, sistema de pontuacao e matchmaking.",
+      "modalTitle": "A Guerra das Capsulas - FPS Multiplayer",
+      "modalDesc": "Meu primeiro videogame completo, um FPS multiplayer desenvolvido do zero com Godot.<br><br><strong>Desenvolvimento realizado:</strong><br>- Networking multiplayer com sincronizacao em tempo real<br>- Fisica 3D e sistema de colisoes<br>- IA para bots com pathfinding<br>- Sistema de pontuacao e rankings<br>- Menu principal e lobby multiplayer<br>- Varios mapas e modos de jogo<br>- Otimizacao de desempenho de rede<br><br><strong>Aprendizados-chave:</strong><br>- Programacao orientada a objetos (GDScript)<br>- Gestao de latencia e previsao cliente-servidor<br>- Arquitetura de jogo multiplayer<br>- Otimizacao 3D para gaming<br><br>Tecnologias: Godot Engine 4.x, GDScript, networking UDP/TCP",
+      "linkGithub": "Codigo Fonte",
+      "linkLauncher": "Launcher (JS)"
+    },
+    "project6": {
+      "title": "Portfolio Interativo",
+      "desc": "Este site. Portfolio moderno com Discord Lanyard, carrossel 3D, animacoes GSAP e design glassmorphism.",
+      "modalTitle": "Portfolio Pessoal - Full Vanilla JS",
+      "modalDesc": "Portfolio moderno desenvolvido totalmente em Vanilla JavaScript sem framework, demonstrando minhas habilidades de front-end.<br><br><strong>Recursos tecnicos:</strong><br>- UI glassmorphism com efeitos visuais avancados<br>- Integracao da API Lanyard (status do Discord em tempo real)<br>- Carrossel 3D circular para projetos<br>- Sistema i18n multilingue (9 idiomas)<br>- Animacoes fluidas otimizadas<br>- PWA com Service Worker para cache offline<br>- Lazy loading e otimizacao de performance<br>- SEO otimizado com rich snippets<br>- 100% responsivo e acessivel<br>- Formulario de contato com validacao<br><br><strong>Performance:</strong><br>- Lighthouse Score: 95+/100<br>- First Contentful Paint < 1s<br>- Sem dependencias externas pesadas<br><br>Tecnologias: HTML5, CSS3 (Grid/Flexbox), Vanilla JavaScript, API REST",
+      "linkGithub": "Codigo Fonte",
       "linkLive": "Ver ao Vivo"
     }
   }

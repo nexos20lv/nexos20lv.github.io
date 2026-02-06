@@ -9,14 +9,14 @@
   },
   "hero": {
     "title": "Hi, I'm Pierre",
-    "subtitle": "Web Developer & Technology Enthusiast",
+    "subtitle": "Full-Stack Developer & SysAdmin",
     "cta": "Learn more about me"
   },
   "about": {
     "title": "About",
-    "p1": "Passionate about development and new technologies, I create innovative and efficient solutions. My approach combines creativity and technical rigor to meet my  projects' needs.",
-    "p2": "Currently in First Year STI2D at Paul Duez high school, I'm aiming for an engineering school to deepen my skills in software development and embedded systems.",
-    "location": "Based in Cambrai, France"
+    "p1": "Passionate developer creating web and software solutions used by hundreds of users.",
+    "p2": "Student in STI2D option SIN at Paul Duez High School. Specialized in full-stack development and system administration. I vibecode sometimes, but I do not only do that.",
+    "location": "Cambrai, France • Available for internships"
   },
   "skills": {
     "title": "Skills"
@@ -39,30 +39,45 @@
     "closeModal": "Close",
     "project1": {
       "title": "Career Conferences Paul Duez",
-      "desc": "A complete website to manage registrations for career conferences, facilitate student tracking and optimize organization.",
-      "modalTitle": "Career Conferences at Paul Duez High School",
-      "modalDesc": "I created a website to manage registrations for the career week and facilitate the work of the teacher in charge of career guidance and the organization of this week. It also allows tracking for homeroom teachers on their class students and to know which conferences the student attended.<br><br>Technologies used: HTML, CSS, JavaScript, PHP",
+      "desc": "Complete registration management system for 400+ students with admin interface, CSV exports and real-time tracking.",
+      "modalTitle": "Career Conference Management Platform",
+      "modalDesc": "Comprehensive web solution developed for Paul Duez High School to manage registration of over 400 students to career conferences.<br><br><strong>Main features:</strong><br>- Registration system with secure authentication<br>- Admin dashboard with real-time statistics<br>- Management of time slots and room capacities<br>- CSV data export for teachers<br>- Tracking interface for homeroom teachers<br>- Email notification system<br><br><strong>Impact:</strong> Used by 400+ students and 50+ teachers, 80% reduction in administrative management time.<br><br>Technologies: PHP 8, MySQL, JavaScript, HTML/CSS, Chart.js",
       "linkSite": "View Site"
     },
     "project2": {
-      "title": "Minecraft Server EclozionMC",
-      "desc": "A custom Minecraft PvP Faction server with custom plugins and community events.",
-      "modalTitle": "Minecraft Server EclozionMC",
-      "modalDesc": "A custom Minecraft PvP Faction server with custom plugins for faction management, quests, and community events. The server has a dedicated website for presentation and community management.",
-      "linkSite": "View Site"
-    },
-    "project3": {
-      "title": "The Capsules War",
-      "desc": "My first video game, a multiplayer FPS developed with the Godot engine.",
-      "modalTitle": "The Capsules War",
-      "modalDesc": "This project is the first video game I created, it's an FPS type game playable in multiplayer with simple graphics. Developed with the Godot game engine and coded in GDScript, it allowed me to learn the basics of video game development and object-oriented programming.",
+      "title": "Nexaria Launcher",
+      "desc": "Modern Minecraft launcher in Java with auto-update, mod management and Microsoft authentication.",
+      "modalTitle": "Nexaria Launcher - Minecraft Custom Launcher",
+      "modalDesc": "Custom launcher for Minecraft server developed in Java with modern graphical interface.<br><br><strong>Features:</strong><br>- Automatic auto-update system<br>- Microsoft/Mojang authentication<br>- Smart mods and resourcepacks management<br>- Modern and fluid user interface<br>- Memory optimization with advanced settings<br>- Multi-profiles and versions<br><br><strong>Technologies:</strong> Java 17, JavaFX, JSON, Mojang API<br><br>⭐ 1 star on GitHub",
       "linkGithub": "View on GitHub"
     },
+    "project3": {
+      "title": "EclozionMC - Website & Server",
+      "desc": "Complete ecosystem: Minecraft PvP-Faction server + website + shop + custom plugin system.",
+      "modalTitle": "EclozionMC - Complete Gaming Ecosystem",
+      "modalDesc": "Large-scale project combining game server development and web applications for a gaming community.<br><br><strong>Developed components:</strong><br><br><strong>Website:</strong><br>- Modern design with animations<br>- Voting system with rewards<br>- Real-time player rankings<br>- Minecraft server API integration<br><br><strong>Minecraft Server:</strong><br>- Optimized PvP-Faction mode<br>- Custom Java/Spigot plugins<br>- Economy and quest system<br>- Automatic events<br><br><strong>Technologies:</strong> Java (Spigot), PHP, MySQL, JavaScript, Minecraft API",
+      "linkSite": "View Site"
+    },
     "project4": {
-      "title": "Portfolio",
-      "desc": "This very site! An interactive and modern showcase developed without framework.",
-      "modalTitle": "Personal Portfolio",
-      "modalDesc": "This portfolio is a showcase of my skills and projects. It was designed to be modern, performant, and fully responsive.<br><br><strong>Key features:</strong><br>- Purple \"neon\" theme with glassmorphism.<br>- Lanyard API integration for real-time Discord status.<br>- 3D circular carousel for projects.<br>- Smooth animations and unique design.<br><br>Technologies used: HTML5, CSS3, Vanilla JS.",
+      "title": "AzureLab Dashboard",
+      "desc": "Administration dashboard for server infrastructure with monitoring, user management and real-time logs.",
+      "modalTitle": "AzureLab Dashboard - Administration Panel",
+      "modalDesc": "Complete administration interface for managing server infrastructure and services.<br><br><strong>Features:</strong><br>- Real-time monitoring (CPU, RAM, disk, network)<br>- Multi-user management with roles<br>- Centralized system logs<br>- Service control (start/stop)<br>- Automatic alerts via Discord webhook<br>- Detailed statistics and graphs<br>- Responsive and modern interface<br><br><strong>Technical stack:</strong> PHP 8, MySQL, JavaScript (Chart.js), REST API, WebSockets<br><br>Deployed on Proxmox infrastructure with Docker",
+      "linkGithub": "View on GitHub"
+    },
+    "project5": {
+      "title": "The Capsules War",
+      "desc": "Complete multiplayer FPS developed with Godot Engine: networking, 3D physics, scoring system and matchmaking.",
+      "modalTitle": "The Capsules War - FPS Multiplayer",
+      "modalDesc": "My first complete video game, a multiplayer FPS developed from scratch with Godot engine.<br><br><strong>Development achieved:</strong><br>- Multiplayer networking with real-time synchronization<br>- 3D physics and collision system<br>- AI for bots with pathfinding<br>- Scoring and ranking system<br>- Main menu and multiplayer lobby<br>- Multiple maps and game modes<br>- Network performance optimization<br><br><strong>Key learnings:</strong><br>- Object-oriented programming (GDScript)<br>- Latency management and client-server prediction<br>- Multiplayer game architecture<br>- 3D optimization for gaming<br><br>Technologies: Godot Engine 4.x, GDScript, UDP/TCP networking",
+      "linkGithub": "Source Code",
+      "linkLauncher": "Launcher (JS)"
+    },
+    "project6": {
+      "title": "Interactive Portfolio",
+      "desc": "This site! Modern portfolio with Discord Lanyard, 3D carousel, GSAP animations and glassmorphism design.",
+      "modalTitle": "Personal Portfolio - Full Vanilla JS",
+      "modalDesc": "Modern portfolio developed entirely in Vanilla JavaScript without framework, demonstrating my front-end development skills.<br><br><strong>Technical features:</strong><br>- Glassmorphism UI with advanced visual effects<br>- Lanyard API integration (real-time Discord status)<br>- 3D circular carousel for projects<br>- Multilingual i18n system (9 languages)<br>- Optimized smooth animations<br>- PWA with Service Worker for offline cache<br>- Lazy loading and performance optimization<br>- SEO optimized with rich snippets<br>- 100% responsive and accessible<br>- Contact form with validation<br><br><strong>Performance:</strong><br>- Lighthouse Score: 95+/100<br>- First Contentful Paint < 1s<br>- No heavy external dependencies<br><br>Technologies: HTML5, CSS3 (Grid/Flexbox), Vanilla JavaScript, REST API",
       "linkGithub": "Source Code",
       "linkLive": "View Live"
     }

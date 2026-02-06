@@ -9,23 +9,23 @@
   },
   "hero": {
     "title": "你好，我是皮埃尔",
-    "subtitle": "Web开发者和技术爱好者",
+    "subtitle": "全栈开发者 & 系统管理员",
     "cta": "了解更多关于我"
   },
   "about": {
     "title": "关于",
-    "p1": "热衷于开发和新技术，我创建创新和高效的解决方案。我的方法结合了创造力和技术严谨性，以满足我的项目需求。",
-    "p2": "目前在保罗·杜埃兹高中STI2D一年级，我的目标是进入工程学院，深化我在软件开发和嵌入式系统方面的技能。",
-    "location": "位于法国康布雷"
+    "p1": "热爱开发，专注打造被数百用户使用的 Web 与软件解决方案。",
+    "p2": "就读于 Paul Duez 高中 STI2D SIN 方向，专注全栈开发与系统管理。我有时会 vibecode，但不只做这个。",
+    "location": "法国康布雷 • 可接受实习"
   },
   "skills": {
     "title": "技能"
   },
   "contact": {
     "title": "联系我",
-    "subtitle": "让我们谈谈你的项目",
-    "desc": "随时联系我讨论您的想法，或者只是打个招呼！",
-    "footer": "由我自己设计和开发 ❤️",
+    "subtitle": "聊聊你的项目",
+    "desc": "欢迎联系我讨论你的想法，或只是打个招呼。",
+    "footer": "由我本人设计和开发 ❤️",
     "form": {
       "name": "姓名",
       "email": "电子邮件",
@@ -38,31 +38,46 @@
     "viewDetails": "查看详情",
     "closeModal": "关闭",
     "project1": {
-      "title": "保罗·杜埃兹职业指导会议",
-      "desc": "一个完整的网站，用于管理职业指导会议的注册，促进学生跟踪和优化组织。",
-      "modalTitle": "保罗·杜埃兹高中职业指导会议",
-      "modalDesc": "我创建了一个网站来管理职业指导周的注册，并方便负责职业指导和组织这一周的教师的工作。它还允许班主任跟踪其班级的学生，并了解学生参加了哪些会议。<br><br>使用的技术：HTML、CSS、JavaScript、PHP",
+      "title": "Paul Duez 职业指导会议",
+      "desc": "面向 400+ 学生的完整报名管理系统，带管理员界面、CSV 导出与实时跟踪。",
+      "modalTitle": "职业指导会议管理平台",
+      "modalDesc": "为 Paul Duez 高中开发的完整 Web 解决方案，用于管理 400+ 学生参加职业指导会议的报名。<br><br><strong>主要功能：</strong><br>- 安全认证的报名系统<br>- 实时数据统计的管理员面板<br>- 时间段与教室容量管理<br>- 面向教师的 CSV 导出<br>- 班主任跟踪界面<br>- 邮件通知系统<br><br><strong>影响：</strong> 400+ 学生与 50+ 教师使用，行政管理时间减少 80%。<br><br>技术：PHP 8、MySQL、JavaScript、HTML/CSS、Chart.js",
       "linkSite": "查看网站"
     },
     "project2": {
-      "title": "Minecraft服务器EclozionMC",
-      "desc": "一个定制的Minecraft PvP派系服务器，具有自定义插件和社区活动。",
-      "modalTitle": "Minecraft服务器EclozionMC",
-      "modalDesc": "一个定制的Minecraft PvP派系服务器，具有用于派系管理、任务和社区活动的自定义插件。该服务器有一个专用网站用于展示和社区管理。",
-      "linkSite": "查看网站"
+      "title": "Nexaria Launcher",
+      "desc": "现代化 Minecraft 启动器（Java），支持自动更新、模组管理与 Microsoft 认证。",
+      "modalTitle": "Nexaria Launcher - Minecraft 自定义启动器",
+      "modalDesc": "为 Minecraft 服务器开发的自定义启动器，使用 Java 并具备现代化界面。<br><br><strong>功能：</strong><br>- 自动更新系统<br>- Microsoft/Mojang 认证<br>- 智能模组与资源包管理<br>- 现代且流畅的 UI<br>- 内存优化与高级设置<br>- 多配置与多版本<br><br><strong>技术：</strong> Java 17、JavaFX、JSON、Mojang API<br><br>⭐ GitHub 1 星",
+      "linkGithub": "查看 GitHub"
     },
     "project3": {
-      "title": "胶囊战争",
-      "desc": "我的第一个视频游戏，一个使用Godot引擎开发的多人FPS。",
-      "modalTitle": "胶囊战争",
-      "modalDesc": "这个项目是我创建的第一个视频游戏，这是一款可以在多人模式下玩的FPS类型游戏，具有简单的图形。使用Godot游戏引擎开发并用GDScript编码，它使我能够学习视频游戏开发和面向对象编程的基础知识。",
-      "linkGithub": "在GitHub上查看"
+      "title": "EclozionMC - 网站与服务器",
+      "desc": "完整生态：Minecraft PvP-Faction 服务器 + 网站 + 商店 + 自定义插件系统。",
+      "modalTitle": "EclozionMC - 完整游戏生态",
+      "modalDesc": "大型项目，结合游戏服务器开发与面向社区的 Web 应用。<br><br><strong>开发组件：</strong><br><br><strong>网站：</strong><br>- 现代化设计与动画<br>- 投票奖励系统<br>- 实时玩家排行榜<br>- Minecraft 服务器 API 集成<br><br><strong>Minecraft 服务器：</strong><br>- 优化的 PvP-Faction 模式<br>- 自定义 Java/Spigot 插件<br>- 经济与任务系统<br>- 自动活动<br><br><strong>技术：</strong> Java（Spigot）、PHP、MySQL、JavaScript、Minecraft API",
+      "linkSite": "查看网站"
     },
     "project4": {
-      "title": "作品集",
-      "desc": "这个网站本身！一个没有框架开发的交互式和现代化展示。",
-      "modalTitle": "个人作品集",
-      "modalDesc": "这个作品集是我的技能和项目的展示。它被设计为现代、高性能和完全响应式。<br><br><strong>主要特点：</strong><br>- 带有玻璃态的紫色\"霓虹\"主题。<br>- 集成Lanyard API实现实时Discord状态。<br>- 项目的3D圆形轮播。<br>- 流畅的动画和独特的设计。<br><br>使用的技术：HTML5、CSS3、Vanilla JS。",
+      "title": "AzureLab Dashboard",
+      "desc": "服务器基础设施管理面板，提供实时监控、用户管理与日志。",
+      "modalTitle": "AzureLab Dashboard - 管理面板",
+      "modalDesc": "用于管理基础设施与服务的完整后台。<br><br><strong>功能：</strong><br>- 实时监控（CPU、RAM、磁盘、网络）<br>- 多用户与角色管理<br>- 集中式系统日志<br>- 服务控制（启动/停止）<br>- Discord webhook 自动告警<br>- 详细统计与图表<br>- 响应式现代界面<br><br><strong>技术栈：</strong> PHP 8、MySQL、JavaScript（Chart.js）、REST API、WebSockets<br><br>部署于 Proxmox + Docker",
+      "linkGithub": "查看 GitHub"
+    },
+    "project5": {
+      "title": "胶囊战争",
+      "desc": "使用 Godot Engine 开发的完整多人 FPS：网络、3D 物理、计分与匹配。",
+      "modalTitle": "胶囊战争 - 多人 FPS",
+      "modalDesc": "我的首个完整游戏项目，多人 FPS，从零开始用 Godot 构建。<br><br><strong>实现内容：</strong><br>- 实时同步的多人网络<br>- 3D 物理与碰撞系统<br>- 带寻路的机器人 AI<br>- 计分与排行系统<br>- 主菜单与多人大厅<br>- 多张地图与模式<br>- 网络性能优化<br><br><strong>关键收获：</strong><br>- 面向对象编程（GDScript）<br>- 延迟处理与客户端预测<br>- 多人游戏架构<br>- 面向游戏的 3D 优化<br><br>技术：Godot Engine 4.x、GDScript、UDP/TCP 网络",
+      "linkGithub": "源代码",
+      "linkLauncher": "Launcher (JS)"
+    },
+    "project6": {
+      "title": "交互式作品集",
+      "desc": "就是这个网站。现代作品集，含 Discord Lanyard、3D 轮播、GSAP 动画与玻璃态设计。",
+      "modalTitle": "个人作品集 - 全 Vanilla JS",
+      "modalDesc": "完全使用 Vanilla JavaScript 开发的现代作品集，展示我的前端能力。<br><br><strong>技术特点：</strong><br>- 玻璃态 UI 与高级视觉效果<br>- Lanyard API 集成（Discord 实时状态）<br>- 3D 圆形项目轮播<br>- 多语言 i18n（9 种语言）<br>- 优化的流畅动画<br>- PWA 与 Service Worker 离线缓存<br>- 懒加载与性能优化<br>- Rich Snippets SEO 优化<br>- 100% 响应式与可访问<br>- 带校验的联系表单<br><br><strong>性能：</strong><br>- Lighthouse Score: 95+/100<br>- First Contentful Paint < 1s<br>- 无重型外部依赖<br><br>技术：HTML5、CSS3（Grid/Flexbox）、Vanilla JavaScript、REST API",
       "linkGithub": "源代码",
       "linkLive": "在线查看"
     }

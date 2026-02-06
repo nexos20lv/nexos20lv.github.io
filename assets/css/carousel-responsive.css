@@ -67,8 +67,9 @@
         font-size: 12px;
     }
 
-    .skill-level-bar {
-        height: 4px;
+    .skill-category {
+        font-size: 10px;
+        padding: 3px 8px;
     }
 
     /* 3D Carousel for Projects */
@@ -260,7 +261,6 @@
         transition: opacity 0.3s ease, filter 0.3s ease !important;
     }
 
-    .skill-level,
     .language-bar {
         transition: width 0.1s ease !important;
     }

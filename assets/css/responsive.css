@@ -258,6 +258,11 @@
         margin-bottom: 8px;
     }
 
+    .skill-category {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
     .infiniteCarousel {
         max-width: 90%;
     }

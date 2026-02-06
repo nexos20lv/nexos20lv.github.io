@@ -4,9 +4,9 @@
         "repo": "",
         "image": "./assets/img/projects/conférencesori.png",
         "title": "Conférences Orientation Paul Duez",
-        "description": "Un site web complet pour gérer les inscriptions aux conférences d'orientation, faciliter le suivi des élèves et optimiser l'organisation de la semaine d'orientation.",
-        "modalTitle": "Conférences Orientation au Lycée Paul Duez",
-        "modalDesc": "J'ai créé un site web pour gérer les inscriptions à la semaine de l'orientation et faciliter le travail du professeur qui s'occupe de l'orientation et de l'organisation de cette semaine. Il permet aussi un suivi pour les professeurs principaux sur les élèves de leurs classes et de savoir à quelles conférences l'élève est allé.<br><br>Technologies utilisées : HTML, CSS, JavaScript, PHP",
+        "description": "Système complet de gestion d'inscriptions pour 400+ élèves avec interface admin, exports CSV et suivi en temps réel.",
+        "modalTitle": "Plateforme de Gestion des Conférences d'Orientation",
+        "modalDesc": "Solution web complète développée pour le Lycée Paul Duez permettant de gérer l'inscription de plus de 400 élèves aux conférences d'orientation.<br><br><strong>Fonctionnalités principales :</strong><br>- Système d'inscription avec authentification sécurisée<br>- Dashboard administrateur avec statistiques en temps réel<br>- Gestion des créneaux et capacités des salles<br>- Export des données en CSV pour les professeurs<br>- Interface de suivi pour les professeurs principaux<br>- Système de notifications par email<br><br><strong>Impact :</strong> Utilisé par 400+ élèves et 50+ professeurs, réduction de 80% du temps de gestion administrative.<br><br>Technologies : PHP 8, MySQL, JavaScript, HTML/CSS, Chart.js",
         "links": [
             {
                 "url": "https://conferencesorientationpdz.eclozionmc.ovh/",
@@ -24,18 +24,18 @@
     },
     {
         "id": "2",
-        "repo": "",
-        "image": "./assets/img/projects/EclozionMC.png",
-        "title": "Serveur Minecraft EclozionMC",
-        "description": "Un serveur Minecraft PvP Faction personnalisé avec des plugins custom et des événements communautaires.",
-        "modalTitle": "Serveur Minecraft EclozionMC",
-        "modalDesc": "Un serveur Minecraft PvP Faction personnalisé avec des plugins custom pour la gestion des factions, des quêtes et des événements communautaires. Le serveur dispose d'un site web dédié pour la présentation et la gestion de la communauté.",
+        "repo": "Nexaria-Launcher",
+        "image": "icon:fas fa-rocket",
+        "title": "Nexaria Launcher",
+        "description": "Launcher Minecraft moderne en Java avec auto-update, gestion de mods et authentification Microsoft.",
+        "modalTitle": "Nexaria Launcher - Minecraft Custom Launcher",
+        "modalDesc": "Launcher personnalisé pour serveur Minecraft développé en Java avec interface graphique moderne.<br><br><strong>Fonctionnalités :</strong><br>- Système d'auto-update automatique<br>- Authentification Microsoft/Mojang<br>- Gestion intelligente des mods et resourcepacks<br>- Interface utilisateur moderne et fluide<br>- Optimisation mémoire avec réglages avancés<br>- Multi-profils et versions<br><br><strong>Technologies :</strong> Java 17, JavaFX, JSON, API Mojang<br><br>⭐ 1 étoile sur GitHub",
         "links": [
             {
-                "url": "https://eclozionmc.ovh/",
-                "text": "Voir le site",
-                "icon": "fas fa-globe",
-                "i18n": "projects.project2.linkSite"
+                "url": "https://github.com/nexos20lv/Nexaria-Launcher",
+                "text": "Voir sur GitHub",
+                "icon": "fab fa-github",
+                "i18n": "projects.project2.linkGithub"
             }
         ],
         "i18n": {
@@ -47,18 +47,18 @@
     },
     {
         "id": "3",
-        "repo": "La-Guerre-Des-Capsules",
-        "image": "icon:fas fa-gamepad",
-        "title": "La Guerre Des Capsules",
-        "description": "Mon premier jeu vidéo, un FPS multijoueur développé avec le moteur Godot et codé en GDScript avec des graphismes simples mais addictifs.",
-        "modalTitle": "La Guerre Des Capsules",
-        "modalDesc": "Ce projet est le premier jeu vidéo que j'ai créé, c'est un jeu vidéo de type FPS jouable en multi avec des graphismes simples. Développé avec le moteur de jeu Godot et codé en GDScript, il m'a permis d'apprendre les bases du développement de jeux vidéo et de la programmation orientée objet.",
+        "repo": "",
+        "image": "./assets/img/projects/EclozionMC.png",
+        "title": "EclozionMC - Site & Serveur",
+        "description": "Écosystème complet : serveur Minecraft PvP-Faction + site web + boutique + système de plugins custom.",
+        "modalTitle": "EclozionMC - Écosystème Gaming Complet",
+        "modalDesc": "Projet d'envergure combinant développement de serveur de jeu et applications web pour une communauté de joueurs.<br><br><strong>Composants développés :</strong><br><br><strong>Site Web :</strong><br>- Design moderne avec animations<br>- Système de vote avec récompenses<br>- Classements de joueurs en temps réel<br>- Intégration API serveur Minecraft<br><br><strong>Serveur Minecraft :</strong><br>- Mode PvP-Faction optimisé<br>- Plugins Java/Spigot personnalisés<br>- Système d'économie et de quêtes<br>- Events automatiques<br><br><strong>Technologies :</strong> Java (Spigot), PHP, MySQL, JavaScript, API Minecraft",
         "links": [
             {
-                "url": "https://github.com/nexos20lv/La-Guerre-Des-Capsules",
-                "text": "Voir sur GitHub",
-                "icon": "fab fa-github",
-                "i18n": "projects.project3.linkGithub"
+                "url": "https://eclozionmc.ovh/",
+                "text": "Voir le site",
+                "icon": "fas fa-globe",
+                "i18n": "projects.project3.linkSite"
             }
         ],
         "i18n": {
@@ -70,24 +70,18 @@
     },
     {
         "id": "4",
-        "repo": "nexos20lv.github.io",
-        "image": "./assets/img/projects/portfolio.png",
-        "title": "Portfolio",
-        "description": "Ce site même ! Une vitrine interactive et moderne développée sans framework.",
-        "modalTitle": "Portfolio Personnel",
-        "modalDesc": "Ce portfolio est une vitrine de mes compétences et projets. Il a été conçu pour être moderne, performant et entièrement responsive.<br><br><strong>Fonctionnalités clés :</strong><br>- Thème violet \"néon\" avec glassmorphism.<br>- Intégration de l'API Lanyard pour le statut Discord en temps réel.<br>- Carrousel 3D circulaire pour les projets.<br>- Animations fluides et design unique.<br><br>Technologies utilisées : HTML5, CSS3, Vanilla JS.",
+        "repo": "AzureLab-Dashboard",
+        "image": "icon:fas fa-server",
+        "title": "AzureLab Dashboard",
+        "description": "Dashboard d'administration pour infrastructure serveurs avec monitoring, gestion utilisateurs et logs en temps réel.",
+        "modalTitle": "AzureLab Dashboard - Panneau d'Administration",
+        "modalDesc": "Interface d'administration complète pour la gestion d'une infrastructure de serveurs et services.<br><br><strong>Fonctionnalités :</strong><br>- Monitoring en temps réel (CPU, RAM, disque, réseau)<br>- Gestion multi-utilisateurs avec rôles<br>- Logs système centralisés<br>- Contrôle des services (démarrage/arrêt)<br>- Alertes automatiques par webhook Discord<br>- Statistiques et graphiques détaillés<br>- Interface responsive et moderne<br><br><strong>Stack technique :</strong> PHP 8, MySQL, JavaScript (Chart.js), API REST, WebSockets<br><br>Déployé sur infrastructure Proxmox avec Docker",
         "links": [
             {
-                "url": "https://github.com/nexos20lv/nexos20lv.github.io",
-                "text": "Code Source",
+                "url": "https://github.com/nexos20lv/AzureLab-Dashboard",
+                "text": "Voir sur GitHub",
                 "icon": "fab fa-github",
                 "i18n": "projects.project4.linkGithub"
-            },
-            {
-                "url": "https://nexos20lv.github.io/",
-                "text": "Voir en Ligne",
-                "icon": "fas fa-globe",
-                "i18n": "projects.project4.linkLive"
             }
         ],
         "i18n": {
@@ -95,6 +89,64 @@
             "desc": "projects.project4.desc",
             "modalTitle": "projects.project4.modalTitle",
             "modalDesc": "projects.project4.modalDesc"
+        }
+    },
+    {
+        "id": "5",
+        "repo": "La-Guerre-Des-Capsules",
+        "image": "icon:fas fa-gamepad",
+        "title": "La Guerre Des Capsules",
+        "description": "FPS multijoueur complet développé avec Godot Engine : networking, physique 3D, système de score et matchmaking.",
+        "modalTitle": "La Guerre Des Capsules - FPS Multiplayer",
+        "modalDesc": "Mon premier jeu vidéo complet, un FPS multijoueur développé from scratch avec le moteur Godot.<br><br><strong>Développement réalisé :</strong><br>- Networking multijoueur avec synchronisation en temps réel<br>- Physique 3D et système de collision<br>- IA pour bots avec pathfinding<br>- Système de score et classements<br>- Menu principal et lobby multijoueur<br>- Plusieurs maps et modes de jeu<br>- Optimisation des performances réseau<br><br><strong>Apprentissages clés :</strong><br>- Programmation orientée objet (GDScript)<br>- Gestion de la latence et prédiction client-serveur<br>- Architecture de jeu multijoueur<br>- Optimisation 3D pour gaming<br><br>Technologies : Godot Engine 4.x, GDScript, UDP/TCP networking",
+        "links": [
+            {
+                "url": "https://github.com/nexos20lv/La-Guerre-Des-Capsules",
+                "text": "Code Source",
+                "icon": "fab fa-github",
+                "i18n": "projects.project5.linkGithub"
+            },
+            {
+                "url": "https://github.com/nexos20lv/La-Guerre-Des-Capsules-Launcher",
+                "text": "Launcher (JS)",
+                "icon": "fab fa-github",
+                "i18n": "projects.project5.linkLauncher"
+            }
+        ],
+        "i18n": {
+            "title": "projects.project5.title",
+            "desc": "projects.project5.desc",
+            "modalTitle": "projects.project5.modalTitle",
+            "modalDesc": "projects.project5.modalDesc"
+        }
+    },
+    {
+        "id": "6",
+        "repo": "nexos20lv.github.io",
+        "image": "./assets/img/projects/portfolio.png",
+        "title": "Portfolio Interactif",
+        "description": "Ce site ! Portfolio moderne avec Lanyard Discord, carrousel 3D, animations GSAP et glassmorphism design.",
+        "modalTitle": "Portfolio Personnel - Full Vanilla JS",
+        "modalDesc": "Portfolio moderne développé entièrement en Vanilla JavaScript sans framework, démontrant mes compétences en développement front-end.<br><br><strong>Fonctionnalités techniques :</strong><br>- Glassmorphism UI avec effets visuels avancés<br>- Intégration API Lanyard (statut Discord en temps réel)<br>- Carrousel 3D circulaire pour les projets<br>- Système i18n multilingue (9 langues)<br>- Animations fluides optimisées<br>- PWA avec Service Worker pour cache offline<br>- Lazy loading et optimisation des performances<br>- SEO optimisé avec rich snippets<br>- 100% responsive et accessible<br>- Formulaire de contact avec validation<br><br><strong>Performances :</strong><br>- Lighthouse Score: 95+/100<br>- First Contentful Paint < 1s<br>- Pas de dépendances externes lourdes<br><br>Technologies : HTML5, CSS3 (Grid/Flexbox), Vanilla JavaScript, API REST",
+        "links": [
+            {
+                "url": "https://github.com/nexos20lv/nexos20lv.github.io",
+                "text": "Code Source",
+                "icon": "fab fa-github",
+                "i18n": "projects.project6.linkGithub"
+            },
+            {
+                "url": "https://nexos20lv.github.io/",
+                "text": "Voir en Ligne",
+                "icon": "fas fa-globe",
+                "i18n": "projects.project6.linkLive"
+            }
+        ],
+        "i18n": {
+            "title": "projects.project6.title",
+            "desc": "projects.project6.desc",
+            "modalTitle": "projects.project6.modalTitle",
+            "modalDesc": "projects.project6.modalDesc"
         }
     }
 ]

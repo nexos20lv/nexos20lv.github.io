@@ -1,0 +1,126 @@
+[
+  {
+    "num": "01",
+    "name": {
+      "fr": "NexShare",
+      "en": "NexShare"
+    },
+    "stack": [
+      "JavaScript",
+      "WebRTC",
+      "P2P",
+      "HTML",
+      "CSS"
+    ],
+    "desc": {
+      "fr": "Application web de transfert de fichiers P2P ultra-rapide via WebRTC avec code de partage, QR code & UI futuriste.",
+      "en": "Ultra-fast P2P file transfer web app via WebRTC with share code, QR code & futuristic UI."
+    },
+    "details": {
+      "fr": "NexShare est une application web axée sur la confidentialité (Privacy-First) qui permet le transfert direct de fichiers entre appareils (P2P) en utilisant WebRTC. Sans serveur intermédiaire pour stocker les fichiers, elle garantit des transferts rapides et sécurisés. L'interface propose un système de partage simple par code ou QR code.",
+      "en": "NexShare is a privacy-first web application that allows direct file transfer between devices (P2P) using WebRTC. Without an intermediary server to store files, it guarantees fast and secure transfers. The interface offers a simple sharing system by code or QR code."
+    },
+    "github": "https://github.com/nexos20lv/NexShare",
+    "media": [],
+    "highlights": [
+      "javascript",
+      "html5",
+      "css"
+    ],
+    "align": "left",
+    "section": "project1"
+  },
+  {
+    "num": "02",
+    "name": {
+      "fr": "La Guerre Des Capsules",
+      "en": "The Capsule War"
+    },
+    "stack": [
+      "Godot Engine",
+      "GDScript",
+      "2D/3D",
+      "Game Design"
+    ],
+    "desc": {
+      "fr": "Jeu indie dynamique développé avec Godot Engine. Combats arènes, physiques 2D/3D et gameplay intense !",
+      "en": "Dynamic indie game developed with Godot Engine. Arena combat, 2D/3D physics and intense gameplay!"
+    },
+    "details": {
+      "fr": "Projet de jeu vidéo indépendant complet créé avec Godot Engine (GDScript). Le jeu propose une action frénétique en arène avec des mécaniques physiques mêlant 2D et 3D. Le projet inclut également un Launcher officiel en Electron (La-Guerre-Des-Capsules-Launcher) avec auto-updater, et un serveur CDN pour la distribution (La-Guerre-Des-Capsules-DL).",
+      "en": "Complete independent video game project created with Godot Engine (GDScript). The game offers frantic arena action with physical mechanics mixing 2D and 3D. The project also includes an official Electron Launcher (La-Guerre-Des-Capsules-Launcher) with auto-updater, and a CDN server for distribution (La-Guerre-Des-Capsules-DL)."
+    },
+    "github": "https://github.com/nexos20lv/La-Guerre-Des-Capsules",
+    "media": [],
+    "highlights": [
+      "python"
+    ],
+    "align": "right",
+    "section": "project2"
+  },
+  {
+    "num": "03",
+    "name": {
+      "fr": "Home Assistant Desktop",
+      "en": "Home Assistant Desktop"
+    },
+    "stack": [
+      "Electron",
+      "JavaScript",
+      "Cross-Platform",
+      "SmartHome"
+    ],
+    "desc": {
+      "fr": "Application de bureau native pour contrôler votre domotique Home Assistant avec télémétrie matérielle & multi-serveurs.",
+      "en": "Native desktop application to control your Home Assistant smart home with hardware telemetry & multi-server support."
+    },
+    "details": {
+      "fr": "Une application de bureau (Desktop App) multiplateforme développée avec Electron pour interagir de manière native avec le système domotique Home Assistant. Elle apporte des fonctionnalités exclusives comme la gestion multi-serveurs et la remontée des données de télémétrie matérielle de l'ordinateur vers Home Assistant.",
+      "en": "A cross-platform desktop application developed with Electron to interact natively with the Home Assistant home automation system. It brings exclusive features like multi-server management and hardware telemetry data reporting from the computer to Home Assistant."
+    },
+    "github": "https://github.com/nexos20lv/Home-Assistant-Desktop",
+    "media": [],
+    "highlights": [
+      "javascript",
+      "nodedotjs"
+    ],
+    "align": "left",
+    "section": "project3"
+  },
+  {
+    "num": "04",
+    "name": {
+      "fr": "NxsBotDeployDash",
+      "en": "NxsBotDeployDash"
+    },
+    "stack": [
+      "Node.js",
+      "Express",
+      "React",
+      "Python",
+      "PM2"
+    ],
+    "desc": {
+      "fr": "Panel d'hébergement privé pour bots Discord (Node.js & Python) avec design Claymorphism & WebSockets.",
+      "en": "Private hosting panel for Discord bots (Node.js & Python) with Claymorphism design & WebSockets."
+    },
+    "details": {
+      "fr": "Interface d'administration (Dashboard) full-stack pour le déploiement et la gestion de bots Discord. Supporte les environnements Node.js et Python. Le panel communique en temps réel via WebSockets, utilise PM2 pour la gestion des processus, et arbore une interface utilisateur moderne basée sur le style Claymorphism.",
+      "en": "Full-stack administration interface (Dashboard) for deploying and managing Discord bots. Supports Node.js and Python environments. The panel communicates in real-time via WebSockets, uses PM2 for process management, and features a modern user interface based on the Claymorphism style."
+    },
+    "github": "https://github.com/nexos20lv/NxsBotDeployDash",
+    "media": [],
+    "highlights": [
+      "react",
+      "nodedotjs",
+      "python",
+      "tailwindcss"
+    ],
+    "badge": {
+      "fr": "Full-Stack",
+      "en": "Full-Stack"
+    },
+    "align": "right",
+    "section": "project4"
+  }
+]

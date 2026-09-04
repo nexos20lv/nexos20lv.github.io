@@ -1,0 +1,54 @@
+# Mirror .gitignore + things we never want inside the image regardless
+# of git status. Keeping the build context small speeds up `docker build`
+# and avoids accidentally baking secrets or local tooling into the image.
+
+# Git
+.git
+.gitignore
+
+# Dependencies (installed inside the builder stage)
+node_modules
+.pnp
+.pnp.*
+
+# Next.js build outputs (we rebuild inside the container)
+.next
+out
+build
+
+# Env files — never copy secrets into the image. Pass runtime env via
+# Dockploy / docker run -e / compose instead.
+.env
+.env.*
+
+# AI tooling & local notes — already .gitignored but belt-and-braces here
+# too so they never end up in the image even if someone adds them later.
+.claude
+.agents
+.cursor
+.aider*
+CLAUDE.md
+AGENTS.md
+PORTFOLIO_BRIEF.md
+skills-lock.json
+memory
+
+# Editors / OS
+.vscode
+.idea
+.DS_Store
+*.swp
+
+# Logs & caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+coverage
+*.tsbuildinfo
+
+# Deployment artefacts we don't need inside the image
+Dockerfile
+.dockerignore
+docker-compose*.yml
+README.md

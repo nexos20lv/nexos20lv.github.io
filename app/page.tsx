@@ -124,7 +124,7 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-                Pierre · NeXoS_20
+                NeXoS_20
               </span>
             {/* Wrapper (not the pill itself) carries the hide: .status-pill
                 hard-sets display:inline-flex, which beats Tailwind's .hidden
@@ -174,8 +174,8 @@ export default function Home() {
                 {t("hero.greeting")}
               </p>
               <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
-                <HeroWord text="Pierre" delay={120} />
-                <HeroWord text="NeXoS_20" delay={260} className="text-ice-400" />
+                <HeroWord text="NeXoS_" delay={120} />
+                <HeroWord text="20" delay={260} className="text-ice-400" />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"

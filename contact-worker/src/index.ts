@@ -2,18 +2,15 @@ export interface Env {
   DISCORD_WEBHOOK_URL: string;
 }
 
-const ALLOWED_ORIGINS = new Set([
-  "https://btmpierre.me",
-  "https://www.btmpierre.me",
-  "http://localhost:3000",
-]);
+const ALLOWED_ORIGINS = new Set(["https://btmpierre.me"]);
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 3;
 const requestLog = new Map<string, { count: number; resetAt: number }>();
 
 function corsHeaders(origin: string | null): HeadersInit {
+  const allowedOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "null";
   return {
-    "Access-Control-Allow-Origin": origin ?? "null",
+    "Access-Control-Allow-Origin": allowedOrigin,
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Max-Age": "86400",
@@ -47,11 +44,18 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("Origin");
 
-    if (request.method === "OPTIONS") {
+    if (request.method === "OPTIONS" && origin && ALLOWED_ORIGINS.has(origin)) {
       return new Response(null, { status: 204, headers: corsHeaders(origin) });
     }
     if (request.method !== "POST" || !origin || !ALLOWED_ORIGINS.has(origin)) {
       return json({ error: "Requête non autorisée." }, 403, origin);
+    }
+    if (request.headers.get("Content-Type") !== "application/json") {
+      return json({ error: "Type de contenu non autorisé." }, 415, origin);
+    }
+    const referer = request.headers.get("Referer");
+    if (referer && !referer.startsWith(`${origin}/`)) {
+      return json({ error: "Origine non autorisée." }, 403, origin);
     }
 
     const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
@@ -60,7 +64,7 @@ export default {
     }
 
     const contentLength = Number(request.headers.get("Content-Length") ?? 0);
-    if (contentLength > 10_000) {
+    if (!Number.isFinite(contentLength) || contentLength > 10_000) {
       return json({ error: "Message trop volumineux." }, 413, origin);
     }
 
@@ -81,7 +85,7 @@ export default {
     if (name.length < 2 || name.length > 100 || !isValidEmail(email) || message.length < 3 || message.length > 4_000) {
       return json({ error: "Veuillez vérifier les champs du formulaire." }, 400, origin);
     }
-    if (!env.DISCORD_WEBHOOK_URL) {
+    if (!env.DISCORD_WEBHOOK_URL || !/^https:\/\/(discord\.com|discordapp\.com)\/api\/webhooks\//.test(env.DISCORD_WEBHOOK_URL)) {
       return json({ error: "Le service de contact est momentanément indisponible." }, 503, origin);
     }
 

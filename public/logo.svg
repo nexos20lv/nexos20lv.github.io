@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">N</title>
+  <defs>
+    <g id="key">
+      <rect width="7" height="7" rx="1.5" fill="#101c35" stroke="#304467"/>
+      <rect x="1" y="1" width="5" height="4" rx="1" fill="#f5f3ff"/>
+    </g>
+    <g id="accent-key">
+      <rect width="7" height="7" rx="1.5" fill="#24175b" stroke="#8b5cf6"/>
+      <rect x="1" y="1" width="5" height="4" rx="1" fill="#a78bfa"/>
+    </g>
+  </defs>
+
+  <g transform="translate(2 2)">
+    <use href="#key" x="0" y="0"/><use href="#key" x="0" y="9"/><use href="#key" x="0" y="18"/><use href="#key" x="0" y="27"/><use href="#key" x="0" y="36"/>
+    <use href="#key" x="36" y="0"/><use href="#key" x="36" y="9"/><use href="#key" x="36" y="18"/><use href="#key" x="36" y="27"/><use href="#key" x="36" y="36"/>
+    <use href="#accent-key" x="9" y="9"/><use href="#accent-key" x="18" y="18"/><use href="#accent-key" x="27" y="27"/>
+  </g>
+
+</svg>

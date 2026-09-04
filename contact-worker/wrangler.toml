@@ -1,0 +1,12 @@
+name = "btmpierre-contact"
+main = "src/index.ts"
+compatibility_date = "2026-09-04"
+
+routes = [
+	{ pattern = "btmpierre.me/api/contact*", zone_name = "btmpierre.me" },
+	{ pattern = "www.btmpierre.me/api/contact*", zone_name = "btmpierre.me" },
+]
+
+[vars]
+# The webhook URL is intentionally not stored here. Set it with:
+# npx wrangler secret put DISCORD_WEBHOOK_URL

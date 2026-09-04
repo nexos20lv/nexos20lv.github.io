@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 
+const CONTACT_ENDPOINT =
+  process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ??
+  "https://eohxhx50pwfea33.m.pipedream.net";
+
 export default function ContactForm() {
   const { lang } = useLanguage();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -21,16 +25,25 @@ export default function ContactForm() {
     };
 
     try {
-      const subject = encodeURIComponent(`Portfolio contact: ${data.name}`);
-      const body = encodeURIComponent(
-        `Nom: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
-      );
-      window.location.href = `mailto:contact@nexos20.dev?subject=${subject}&body=${body}`;
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setStatus("error");
+        setErrorMsg(result.error || (lang === "fr" ? "Erreur d'envoi." : "Send error."));
+        return;
+      }
+
       setStatus("success");
       (e.target as HTMLFormElement).reset();
     } catch {
       setStatus("error");
-      setErrorMsg(lang === "fr" ? "Impossible d'ouvrir votre messagerie." : "Unable to open your email client.");
+      setErrorMsg(lang === "fr" ? "Erreur réseau." : "Network error.");
     }
   };
 

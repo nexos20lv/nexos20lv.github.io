@@ -24,6 +24,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://btmpierre.me"),
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+  },
   title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
   description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Applications web, jeux vidéo et outils systèmes.",
   authors: [{ name: "Pierre (NeXoS_20)" }],

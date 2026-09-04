@@ -124,22 +124,18 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-                NeXoS_20
+                Pierre · NeXoS_20
               </span>
             {/* Wrapper (not the pill itself) carries the hide: .status-pill
                 hard-sets display:inline-flex, which beats Tailwind's .hidden
                 due to CSS source order, so hiding must happen on a parent. */}
-            <span className="hidden md:inline-flex">
-              <span className="status-pill">{t("header.availability")}</span>
-              <DiscordStatus userId="1484842527935692800" />
-            </span>
           </div>
           <div className="flex items-center gap-2 pointer-events-auto">
             
             
             <span className="hidden md:inline-flex">
             <a
-              href="https://github.com/nexos20lv/3d-portfolio"
+              href="https://github.com/nexos20lv/nexos20lv.github.io"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="hover"
@@ -178,8 +174,8 @@ export default function Home() {
                 {t("hero.greeting")}
               </p>
               <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
-                <HeroWord text="NeXoS_" delay={120} />
-                <HeroWord text="20" delay={260} className="text-ice-400" />
+                <HeroWord text="Pierre" delay={120} />
+                <HeroWord text="NeXoS_20" delay={260} className="text-ice-400" />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"

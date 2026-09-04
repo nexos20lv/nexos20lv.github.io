@@ -23,19 +23,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NeXoS_20 — Full-Stack & Game Developer",
-  description: "Portfolio de NeXoS_20 - Full-Stack & Game Developer. Applications web, jeux vidéo et outils systèmes.",
-  authors: [{ name: "NeXoS_20" }],
+  metadataBase: new URL("https://btmpierre.me"),
+  title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
+  description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Applications web, jeux vidéo et outils systèmes.",
+  authors: [{ name: "Pierre (NeXoS_20)" }],
   openGraph: {
-    title: "NeXoS_20 — Full-Stack & Game Developer",
-    description: "Portfolio de NeXoS_20 - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
+    title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
+    description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
     type: "website",
     locale: "fr_FR",
+    url: "https://btmpierre.me",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NeXoS_20 — Full-Stack & Game Developer",
-    description: "Portfolio de NeXoS_20 - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
+    title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
+    description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
   },
 };
 

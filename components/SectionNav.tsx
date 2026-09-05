@@ -1,65 +1,157 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useLenis } from "lenis/react";
+import {
+  useActiveSection,
+  setActiveSection,
+  setManualNavigating,
+} from "@/lib/useActiveSection";
 
 // Vertical dots fixed to the right edge that highlight the current section
-// using the same `data-kb-section` markers the 3D scene already observes.
-// Click a dot â†’ smooth scroll (Lenis is wrapping the document, so a regular
-// scrollIntoView gets intercepted and animated by Lenis). Hidden on small
-// screens to avoid crowding the keyboard.
+// and listen for keyboard navigation (arrows, 1-5, Home, End).
 export default function SectionNav() {
-  const [active, setActive] = useState<string>("hero");
-  const { t } = useLanguage();
+  const [active] = useActiveSection();
+  const { t, lang } = useLanguage();
+  const lenis = useLenis();
 
-  const SECTIONS = [
-    { id: "hero", label: t("nav.home") },
-    { id: "stack", label: t("nav.stack") },
-    { id: "experience", label: t("nav.experience") },
-    { id: "project1", label: `${t("nav.project")} 01` },
-    { id: "project2", label: `${t("nav.project")} 02` },
-    { id: "project3", label: `${t("nav.project")} 03` },
-    { id: "project4", label: `${t("nav.project")} 04` },
-    { id: "contact", label: t("nav.contact") },
-  ];
-
-  useEffect(() => {
-    const ids = [
-      "hero",
-      "stack",
-      "experience",
-      "project1",
-      "project2",
-      "project3",
-      "project4",
-      "contact",
-    ];
-    const els = ids.map((id) =>
-      document.querySelector<HTMLElement>(`[data-kb-section="${id}"]`)
-    );
-    const obs = new IntersectionObserver(
-      (entries) => {
-        let best: { id: string; ratio: number } | null = null;
-        for (const entry of entries) {
-          const id = (entry.target as HTMLElement).dataset.kbSection;
-          if (!id) continue;
-          const ratio = entry.intersectionRatio;
-          if (!best || ratio > best.ratio) best = { id, ratio };
-        }
-        if (best && best.ratio > 0) setActive(best.id);
-      },
-      { threshold: [0.25, 0.5, 0.75] }
-    );
-    for (const el of els) if (el) obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const SECTIONS = useMemo(
+    () => [
+      { id: "hero", label: t("nav.home") },
+      { id: "stack", label: t("nav.stack") },
+      { id: "experience", label: t("nav.experience") },
+      { id: "project1", label: `${t("nav.project")} 01` },
+      { id: "project2", label: `${t("nav.project")} 02` },
+      { id: "project3", label: `${t("nav.project")} 03` },
+      { id: "project4", label: `${t("nav.project")} 04` },
+      { id: "contact", label: t("nav.contact") },
+    ],
+    [t]
+  );
 
   const goTo = (id: string) => {
     const target = document.querySelector<HTMLElement>(
       `[data-kb-section="${id}"]`
     );
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      setManualNavigating(true, 1000);
+      setActiveSection(id);
+      if (lenis) {
+        lenis.scrollTo(target, { offset: 0, duration: 1.0 });
+      } else {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
   };
+
+  // Keyboard navigation listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger navigation if typing in an input, textarea or modal
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        (e.target as HTMLElement)?.isContentEditable ||
+        e.ctrlKey ||
+        e.metaKey ||
+        e.altKey
+      ) {
+        return;
+      }
+
+      const currentIndex = SECTIONS.findIndex((s) => s.id === active);
+
+      // Arrow Down / J / PageDown -> next section
+      if (
+        e.key === "ArrowDown" ||
+        e.key === "j" ||
+        e.key === "J" ||
+        e.key === "PageDown"
+      ) {
+        e.preventDefault();
+        const nextIndex = Math.min(
+          SECTIONS.length - 1,
+          (currentIndex >= 0 ? currentIndex : 0) + 1
+        );
+        goTo(SECTIONS[nextIndex].id);
+        return;
+      }
+
+      // Arrow Up / K / PageUp -> prev section
+      if (
+        e.key === "ArrowUp" ||
+        e.key === "k" ||
+        e.key === "K" ||
+        e.key === "PageUp"
+      ) {
+        e.preventDefault();
+        const prevIndex = Math.max(
+          0,
+          (currentIndex >= 0 ? currentIndex : 0) - 1
+        );
+        goTo(SECTIONS[prevIndex].id);
+        return;
+      }
+
+      // Direct section jumps via number keys 1 to 5 (and 6-8)
+      if (e.code === "Digit1" || e.key === "1") {
+        e.preventDefault();
+        goTo("hero");
+        return;
+      }
+      if (e.code === "Digit2" || e.key === "2") {
+        e.preventDefault();
+        goTo("stack");
+        return;
+      }
+      if (e.code === "Digit3" || e.key === "3") {
+        e.preventDefault();
+        goTo("experience");
+        return;
+      }
+      if (e.code === "Digit4" || e.key === "4") {
+        e.preventDefault();
+        goTo("project1");
+        return;
+      }
+      if (e.code === "Digit5" || e.key === "5") {
+        e.preventDefault();
+        goTo("contact");
+        return;
+      }
+      if (e.code === "Digit6" || e.key === "6") {
+        e.preventDefault();
+        goTo("project2");
+        return;
+      }
+      if (e.code === "Digit7" || e.key === "7") {
+        e.preventDefault();
+        goTo("project3");
+        return;
+      }
+      if (e.code === "Digit8" || e.key === "8") {
+        e.preventDefault();
+        goTo("project4");
+        return;
+      }
+
+      // Home / End
+      if (e.key === "Home") {
+        e.preventDefault();
+        goTo("hero");
+        return;
+      }
+      if (e.key === "End") {
+        e.preventDefault();
+        goTo("contact");
+        return;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [active, SECTIONS, lenis]);
 
   return (
     <nav
@@ -97,8 +189,20 @@ export default function SectionNav() {
           </button>
         );
       })}
+
+      {/* Keyboard navigation helper pill */}
+      <div
+        className="mt-2 flex flex-col items-center gap-1 opacity-50 hover:opacity-100 transition-opacity"
+        title={lang === "fr" ? "Naviguez avec ↑ / ↓ ou les chiffres 1-5" : "Navigate with ↑ / ↓ or keys 1-5"}
+      >
+        <div className="flex items-center gap-1 text-[9px] font-mono text-ice-300/80 bg-ink-2/80 border border-ice-700/30 rounded px-1.5 py-0.5 shadow-sm">
+          <span>↑</span>
+          <span>↓</span>
+        </div>
+      </div>
     </nav>
   );
 }
+
 
 

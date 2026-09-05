@@ -17,8 +17,24 @@ import {
 } from "react";
 import { useSeason } from "@/components/SeasonProvider";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useActiveSection } from "@/lib/useActiveSection";
 import * as THREE from "three";
 import { SKILLS_GRID, type SkillIcon } from "@/lib/skills";
+
+// Suppress non-fatal Three.js r183+ deprecation warning emitted by @react-three/fiber's
+// internal loop until R3F v10 switches to THREE.Timer.
+if (typeof window !== "undefined") {
+  const originalWarn = console.warn;
+  console.warn = (...args: unknown[]) => {
+    if (
+      typeof args[0] === "string" &&
+      args[0].includes("Clock: This module has been deprecated")
+    ) {
+      return;
+    }
+    originalWarn(...args);
+  };
+}
 
 // Per-section keyboard "states" — same idea as Naresh's animated-background-
 // config.ts, but for our R3F keyboard. Values are tweened toward via lerp
@@ -134,58 +150,7 @@ const MOBILE_STATE: KeyboardState = {
   scale: 1.55,
 };
 
-// Track which data-kb-section element is currently most prominent on-screen.
-// Returns the section id (React state, for conditional overlay rendering) +
-// a mutable Set of "highlighted" keyboard slugs read off the same element's
-// data-kb-highlights attribute. The Set is a ref so per-frame reads inside
-// useFrame don't trigger re-renders — Keycap mutates position/emissive
-// based on `highlightsRef.current.has(slug)`.
-function useActiveSection(): [
-  string,
-  React.RefObject<string>,
-  React.RefObject<Set<string>>
-] {
-  const [section, setSection] = useState<string>("hero");
-  const ref = useRef<string>("hero");
-  const highlightsRef = useRef<Set<string>>(new Set());
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const visibility = new Map<Element, number>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          visibility.set(entry.target, entry.intersectionRatio);
-        }
-        let bestRatio = 0;
-        let bestEl: HTMLElement | null = null;
-        let bestSection = ref.current;
-        for (const [el, ratio] of visibility) {
-          if (ratio > bestRatio) {
-            bestRatio = ratio;
-            bestEl = el as HTMLElement;
-            bestSection = bestEl.dataset.kbSection ?? bestSection;
-          }
-        }
-        // Always refresh highlights from the most-visible element, even if
-        // the section id didn't change — lets page tweak highlights by
-        // updating just the data attribute.
-        const raw = bestEl?.dataset.kbHighlights ?? "";
-        highlightsRef.current = new Set(
-          raw.split(",").map((s) => s.trim()).filter(Boolean)
-        );
-        if (bestSection !== ref.current) {
-          ref.current = bestSection;
-          setSection(bestSection);
-        }
-      },
-      { threshold: [0, 0.25, 0.5, 0.75, 1] }
-    );
-    const targets = document.querySelectorAll<HTMLElement>("[data-kb-section]");
-    targets.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-  return [section, ref, highlightsRef];
-}
+
 
 // Taglines are now resolved via the i18n dictionary (keyboard.taglines.<slug>),
 // keyed by the simple-icons slug on each key. See lib/i18n.ts.
@@ -342,7 +307,7 @@ function loadKeySounds(ctx: AudioContext): Promise<void> {
   return keySoundsLoading;
 }
 
-function playKeyClick(seed = 0) {
+function playKeyClick(seed = 0, type: "press" | "release" | "random" = "random") {
   if (typeof window === "undefined") return;
   try {
     if (!audioCtx) {
@@ -360,12 +325,20 @@ function playKeyClick(seed = 0) {
       return;
     }
     const trigger = () => {
-      const available = keySoundBuffers.filter(
-        (b): b is AudioBuffer => b !== null
-      );
-      if (available.length === 0) return;
-      const buffer =
-        available[Math.floor(Math.random() * available.length)];
+      let buffer: AudioBuffer | null = null;
+      if (type === "press" && keySoundBuffers[0]) {
+        buffer = keySoundBuffers[0];
+      } else if (type === "release" && keySoundBuffers[1]) {
+        buffer = keySoundBuffers[1];
+      } else {
+        const available = keySoundBuffers.filter(
+          (b): b is AudioBuffer => b !== null
+        );
+        if (available.length === 0) return;
+        buffer = available[Math.floor(Math.random() * available.length)];
+      }
+      if (!buffer) return;
+
       // Per-key playback rate detune (±4%) keeps repeated presses lively.
       const detune =
         1 + (((seed * 9301 + 49297) % 233280) / 233280 - 0.5) * 0.08;
@@ -373,7 +346,7 @@ function playKeyClick(seed = 0) {
       src.buffer = buffer;
       src.playbackRate.value = detune;
       const gain = ctx.createGain();
-      gain.gain.value = 0.7;
+      gain.gain.value = type === "release" ? 0.45 : 0.7;
       src.connect(gain);
       gain.connect(ctx.destination);
       src.start();
@@ -388,6 +361,86 @@ function playKeyClick(seed = 0) {
   }
 }
 
+const PHYSICAL_KEY_MAP: Record<string, string> = {
+  // Numbers
+  Digit1: "0-0",
+  Digit2: "0-1",
+  Digit3: "0-2",
+  Digit4: "0-3",
+  Digit5: "0-4",
+  Digit6: "1-0",
+  Digit7: "1-1",
+  Digit8: "1-2",
+  Digit9: "1-3",
+  Digit0: "1-4",
+
+  // Top row letters (QWERTY / AZERTY)
+  KeyQ: "0-0",
+  KeyA: "0-0",
+  KeyW: "0-1",
+  KeyZ: "0-1",
+  KeyE: "0-2",
+  KeyR: "0-3",
+  KeyT: "0-4",
+  KeyY: "0-4",
+  KeyU: "1-0",
+  KeyI: "1-1",
+  KeyO: "1-2",
+  KeyP: "1-3",
+
+  // Middle row letters
+  KeyS: "1-1",
+  KeyD: "1-2",
+  KeyF: "1-3",
+  KeyG: "1-4",
+  KeyH: "2-0",
+  KeyJ: "2-1",
+  KeyK: "2-2",
+  KeyL: "2-3",
+  KeyM: "2-4",
+
+  // Bottom row letters
+  KeyX: "2-1",
+  KeyC: "2-2",
+  KeyV: "2-3",
+  KeyB: "2-4",
+  KeyN: "1-3",
+
+  // Common keys
+  Space: "2-2",
+  Enter: "2-4",
+  Backspace: "0-4",
+  Tab: "0-0",
+};
+
+function get3DKeyForEvent(e: KeyboardEvent): string | null {
+  // Never intercept navigation, functional or modifier keys
+  if (
+    e.key === "ArrowDown" ||
+    e.key === "ArrowUp" ||
+    e.key === "ArrowLeft" ||
+    e.key === "ArrowRight" ||
+    e.key === "PageDown" ||
+    e.key === "PageUp" ||
+    e.key === "Home" ||
+    e.key === "End" ||
+    e.key === "Escape" ||
+    e.key === "Tab" ||
+    e.key === "CapsLock" ||
+    (e.key.startsWith("F") && e.key.length > 1)
+  ) {
+    return null;
+  }
+  if (PHYSICAL_KEY_MAP[e.code]) return PHYSICAL_KEY_MAP[e.code];
+  if (e.key.length !== 1) return null;
+  const char = e.key.toLowerCase();
+  const code = char.charCodeAt(0) || 0;
+  const index = Math.abs(code) % (ROWS * COLS);
+  const row = Math.floor(index / COLS);
+  const col = index % COLS;
+  return `${row}-${col}`;
+}
+
 function Keycap({
   geometry,
   position,
@@ -395,6 +448,7 @@ function Keycap({
   icon,
   onHoverChange,
   hovered,
+  isPressed = false,
   highlightsRef,
   activeSectionRef,
   wavePhase,
@@ -406,6 +460,7 @@ function Keycap({
   icon: SkillIcon;
   onHoverChange: (hovered: boolean) => void;
   hovered: boolean;
+  isPressed?: boolean;
   // Reactive set of slugs to animate; read every frame so we don't force
   // re-renders when the active project changes.
   highlightsRef: React.RefObject<Set<string>>;
@@ -461,7 +516,8 @@ function Keycap({
 
   useFrame((state) => {
     if (!pressRef.current) return;
-    const pressed = hovered ? -PRESS_DEPTH : 0;
+    const isDown = hovered || isPressed;
+    const pressed = isDown ? -PRESS_DEPTH : 0;
     const t = state.clock.elapsedTime;
 
     // Project wave: 1 while this key's slug is in the active section's
@@ -501,18 +557,19 @@ function Keycap({
       // Emissive intensity pulses with the bob so glow brightens on the
       // upswing of the wave.
       const pulse = (bob / 0.14 + 1) * 0.5; // 0..1 from the sine
-      const targetIntensity =
-        baseEmissive + liftAmp.current * (0.45 + pulse * 0.55);
+      const targetIntensity = isPressed
+        ? 1.25
+        : baseEmissive + liftAmp.current * (0.45 + pulse * 0.55);
       matRef.current.emissiveIntensity = THREE.MathUtils.lerp(
         matRef.current.emissiveIntensity,
         targetIntensity,
-        0.15
+        0.2
       );
       // Emissive COLOUR lerps white → season accent so highlighted keys
       // glow in the current theme (blue in winter, green in spring, …).
       matRef.current.emissive
         .copy(whiteColor)
-        .lerp(accentColor, liftAmp.current);
+        .lerp(accentColor, isPressed ? 1 : liftAmp.current);
       // Body tint pushes clearly toward the accent so the key reads as
       // "tinted white" (e.g. an icy blue-white in winter) rather than pure
       // plastic when lifted.
@@ -627,6 +684,80 @@ function Keyboard({ mobile }: { mobile: boolean }) {
     };
   }, [hoveredKey]);
 
+  // Physical keyboard typing (Easter Egg): presses 3D keys with mechanical audio
+  const [pressedKeys, setPressedKeys] = useState<Set<string>>(new Set());
+  const [typedSkill, setTypedSkill] = useState<SkillIcon | null>(null);
+  const typedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      // Ignore if typing inside form fields or using browser shortcuts
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        (e.target as HTMLElement)?.isContentEditable ||
+        e.ctrlKey ||
+        e.metaKey ||
+        e.altKey
+      ) {
+        return;
+      }
+
+      if (e.repeat) return;
+
+      const id = get3DKeyForEvent(e);
+      if (!id) return;
+
+      setPressedKeys((prev) => {
+        const next = new Set(prev);
+        next.add(id);
+        return next;
+      });
+
+      const [row, col] = id.split("-").map(Number);
+      const icon = SKILLS[row]?.[col];
+      if (icon) {
+        setTypedSkill(icon);
+        if (typedTimeoutRef.current) clearTimeout(typedTimeoutRef.current);
+        typedTimeoutRef.current = setTimeout(() => {
+          setTypedSkill(null);
+        }, 2200);
+      }
+
+      playKeyClick(row * COLS + col, "press");
+    };
+
+    const onKeyUp = (e: KeyboardEvent) => {
+      if (
+        e.target instanceof HTMLInputElement ||
+        e.target instanceof HTMLTextAreaElement ||
+        (e.target as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
+
+      const id = get3DKeyForEvent(e);
+      if (!id) return;
+
+      setPressedKeys((prev) => {
+        const next = new Set(prev);
+        next.delete(id);
+        return next;
+      });
+
+      const [row, col] = id.split("-").map(Number);
+      playKeyClick(row * COLS + col, "release");
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
+      if (typedTimeoutRef.current) clearTimeout(typedTimeoutRef.current);
+    };
+  }, []);
+
   useEffect(() => {
     if (ref.current) ref.current.rotation.order = "YXZ";
   }, []);
@@ -704,10 +835,12 @@ function Keyboard({ mobile }: { mobile: boolean }) {
   }, [keycapGeom, baseGeom]);
 
   const hoveredIcon = useMemo(() => {
-    if (!hoveredKey) return null;
-    const [r, c] = hoveredKey.split("-").map(Number);
-    return SKILLS[r]?.[c] ?? null;
-  }, [hoveredKey]);
+    if (hoveredKey) {
+      const [r, c] = hoveredKey.split("-").map(Number);
+      return SKILLS[r]?.[c] ?? null;
+    }
+    return typedSkill;
+  }, [hoveredKey, typedSkill]);
 
   const keycapY = BASE_HEIGHT / 2 + KEYCAP_HEIGHT / 2 + 0.005;
   const keycaps = [];
@@ -730,6 +863,7 @@ function Keyboard({ mobile }: { mobile: boolean }) {
           isMobile={isMobile}
           icon={icon}
           hovered={hoveredKey === id}
+          isPressed={pressedKeys.has(id)}
           highlightsRef={highlightsRef}
           activeSectionRef={activeSectionRef}
           wavePhase={wavePhase}

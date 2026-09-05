@@ -6,14 +6,14 @@ import {
   siNextdotjs,
   siTailwindcss,
   siPython,
-  siGodotengine,
   siElectron,
   siWebrtc,
   siHtml5,
   siCss,
-  siGit,
-  siDocker,
-  siArduino,
+  siRaspberrypi,
+  siHomeassistant,
+  siExpress,
+  siPm2,
 } from "simple-icons";
 
 export type SkillIcon = {
@@ -25,8 +25,8 @@ export type SkillIcon = {
 
 export const SKILLS_GRID: readonly (readonly SkillIcon[])[] = [
   [siJavascript, siTypescript, siHtml5, siCss, siTailwindcss],
-  [siPython, siGodotengine, siReact, siNextdotjs, siNodedotjs],
-  [siElectron, siWebrtc, siArduino, siDocker, siGit],
+  [siReact, siNextdotjs, siNodedotjs, siExpress, siPm2],
+  [siPython, siRaspberrypi, siElectron, siHomeassistant, siWebrtc],
 ] as const;
 
 export const SKILLS_FLAT: readonly SkillIcon[] = SKILLS_GRID.flat();

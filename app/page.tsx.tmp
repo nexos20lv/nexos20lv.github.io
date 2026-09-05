@@ -291,7 +291,7 @@ export default function Home() {
                 due to CSS source order, so hiding must happen on a parent. */}
             <span className="hidden md:inline-flex">
               <span className="status-pill">{t("header.availability")}</span>
-              <DiscordStatus userId="1484842527935692800" />
+              <DiscordStatus userId="1545915805374357536" />
             </span>
           </div>
           <div className="flex items-center gap-2 pointer-events-auto">

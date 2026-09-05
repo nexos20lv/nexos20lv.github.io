@@ -242,7 +242,7 @@ export default function Home() {
 
             {/* Discord presence card */}
             <div className="mt-8">
-              <DiscordCard userId="1484842527935692800" />
+              <DiscordCard userId="1545915805374357536" />
             </div>
 
             {/* Animated scroll indicator at bottom */}

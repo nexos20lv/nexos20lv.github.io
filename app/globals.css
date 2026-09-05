@@ -82,6 +82,23 @@ body {
   transition: background 600ms ease, color 600ms ease;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 ::selection {
   background: rgba(166, 197, 228, 0.4);
   color: var(--ice-50);

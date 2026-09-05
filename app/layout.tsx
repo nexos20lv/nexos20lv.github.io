@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
@@ -28,20 +28,21 @@ export const metadata: Metadata = {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
   },
-  title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
-  description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Applications web, jeux vidéo et outils systèmes.",
+  manifest: "/manifest.json",
+  title: "Pierre · NeXoS_20 — Développeur Full-Stack",
+  description: "Portfolio de Pierre (NeXoS_20) - Développeur Full-Stack. Applications web modernes, dashboards temps réel et outils systèmes.",
   authors: [{ name: "Pierre (NeXoS_20)" }],
   openGraph: {
-    title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
-    description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
+    title: "Pierre · NeXoS_20 — Développeur Full-Stack",
+    description: "Portfolio de Pierre (NeXoS_20) - Développeur Full-Stack. Next.js, React Three Fiber, WebSockets.",
     type: "website",
     locale: "fr_FR",
     url: "https://btmpierre.me",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pierre · NeXoS_20 — Full-Stack & Game Developer",
-    description: "Portfolio de Pierre (NeXoS_20) - Full-Stack & Game Developer. Next.js, React Three Fiber, GLSL.",
+    title: "Pierre · NeXoS_20 — Développeur Full-Stack",
+    description: "Portfolio de Pierre (NeXoS_20) - Développeur Full-Stack. Next.js, React Three Fiber, WebSockets.",
   },
 };
 

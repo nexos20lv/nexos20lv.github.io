@@ -49,14 +49,25 @@ export default function Carousel({ media, projectNum, altPrefix = "Screenshot" }
         {slides.map((src, i) => (
           <div key={i} className="carousel__slide">
             {src ? (
-              // Real screenshot
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={src}
-                alt={`${altPrefix} ${i + 1}`}
-                className="carousel__img"
-                loading="lazy"
-              />
+              /\.(mp4|webm|ogg|mov)$/i.test(src) ? (
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="carousel__img object-cover w-full h-full"
+                />
+              ) : (
+                // Real screenshot
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={src}
+                  alt={`${altPrefix} ${i + 1}`}
+                  className="carousel__img object-contain"
+                  loading="lazy"
+                />
+              )
             ) : (
               // Placeholder — each slide uses a different gradient origin so
               // they're visually distinct while the carousel is browsed.

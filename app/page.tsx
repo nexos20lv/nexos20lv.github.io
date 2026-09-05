@@ -4,6 +4,7 @@
 import { useState } from "react";
 import FrozenKeyboard from "@/components/FrozenKeyboard";
 import SmoothScroll from "@/components/smooth-scroll";
+import PageLoader from "@/components/PageLoader";
 import Reveal from "@/components/Reveal";
 import SectionNav from "@/components/SectionNav";
 import CopyEmail from "@/components/CopyEmail";
@@ -12,7 +13,6 @@ import dynamic from "next/dynamic";
 const ContactForm = dynamic(() => import("@/components/ContactForm"), { ssr: false });
 
 import LanguagePicker from "@/components/LanguagePicker";
-import DiscordStatus from "@/components/DiscordStatus";
 import DiscordCard from "@/components/DiscordCard";
 import ProjectModal, {
   type ProjectDetail,
@@ -20,6 +20,7 @@ import ProjectModal, {
 import { useLanguage } from "@/components/LanguageProvider";
 import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";
+import { setActiveSection, setManualNavigating } from "@/lib/useActiveSection";
 import type { Lang } from "@/lib/i18n";
 
 const EMAIL = "contact@nexos20.dev";
@@ -48,13 +49,13 @@ const experiences: Array<{
   stack: string[];
 }> = [
   {
-    role: { fr: "Développeur Full-Stack & Game Dev", en: "Full-Stack & Game Developer" },
+    role: { fr: "Développeur Full-Stack & Logiciel", en: "Full-Stack & Software Developer" },
     company: "Freelance / Open Source",
     period: { fr: "Présent", en: "Present" },
     location: { fr: "Remote", en: "Remote" },
     summary: {
-      fr: "Création d'applications web modernes, d'outils systèmes et de jeux vidéo (Godot). Passionné par l'open-source, les architectures web scalables et le développement multiplateforme.",
-      en: "Creating modern web apps, system tools, and video games (Godot). Passionate about open-source, scalable web architectures, and cross-platform development.",
+      fr: "Création d'applications web modernes, d'outils systèmes et d'applications bureau (Electron). Passionné par l'open-source, les architectures temps réel et le développement multiplateforme.",
+      en: "Building modern web apps, system tools, and desktop applications (Electron). Passionate about open-source, real-time architectures, and cross-platform development.",
     },
     bullets: [
       {
@@ -62,19 +63,19 @@ const experiences: Array<{
         en: "Development of P2P tools and secure data transfers (WebRTC).",
       },
       {
-        fr: "Création de dashboards complexes (React, Next.js, Node.js).",
-        en: "Creation of complex dashboards (React, Next.js, Node.js).",
+        fr: "Création de dashboards complexes et panneaux d'administration (React, Next.js, Node.js).",
+        en: "Creation of complex dashboards and administration panels (React, Next.js, Node.js).",
       },
       {
-        fr: "Développement de jeux vidéo et d'outils de distribution.",
-        en: "Development of video games and distribution tools.",
+        fr: "Conception d'outils de distribution logicielle et d'applications bureau (Electron, auto-updates).",
+        en: "Design of software distribution tools and desktop applications (Electron, auto-updates).",
       },
       {
-        fr: "Scripts systèmes, automatisation (Python, Bash).",
-        en: "System scripts, automation (Python, Bash).",
+        fr: "Scripts systèmes, intégrations API et automatisation (Python, Bash).",
+        en: "System scripts, API integrations, and automation (Python, Bash).",
       },
     ],
-    stack: ["Next.js", "Node.js", "React", "Python", "Godot"],
+    stack: ["Next.js", "React", "Node.js", "TypeScript", "Python"],
   },
 ];
 
@@ -107,6 +108,7 @@ export default function Home() {
 
   return (
     <SmoothScroll>
+      <PageLoader />
       <div className="relative">
         {/* Desktop: persistent 3D scene fullscreen behind content. On mobile
             the canvas lives inside the hero instead (see below) so it scrolls
@@ -190,34 +192,48 @@ export default function Home() {
                 className="mt-10 flex flex-wrap items-center gap-3 pointer-events-auto fade-in-up"
                 style={{ ["--d" as string]: "700ms" }}
               >
-                <a
-                  href={lang === "en" ? "/cv_en.pdf" : "/cv.pdf"}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   data-cursor="hover"
                   data-magnetic
                   className="frost-btn frost-btn--primary"
+                  onClick={() => {
+                    setManualNavigating(true, 1000);
+                    setActiveSection("contact");
+                    document
+                      .querySelector<HTMLElement>(
+                        '[data-kb-section="contact"]'
+                      )
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
                 >
                   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                    <path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z" />
-                    <path d="M14 3v5h5" />
+                    <path d="M22 2L11 13" />
+                    <path d="M22 2l-7 20-4-9-9-4 20-7z" />
                   </svg>
-                  {t("hero.cv")}
-                </a>
+                  {t("hero.hire")}
+                </button>
                 <button
                   type="button"
                   data-cursor="hover"
                   data-magnetic
                   className="frost-btn"
-                  onClick={() =>
+                  onClick={() => {
+                    setManualNavigating(true, 1000);
+                    setActiveSection("project1");
                     document
                       .querySelector<HTMLElement>(
-                        '[data-kb-section="contact"]'
+                        '[data-kb-section="project1"]'
                       )
-                      ?.scrollIntoView({ behavior: "smooth", block: "start" })
-                  }
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
                 >
-                  {t("hero.hire")}
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                  </svg>
+                  {lang === "fr" ? "Voir les projets" : "View projects"}
                 </button>
                 {/* Mobile-only full-width break: forces the social icons onto
                     their own row below the two primary buttons. Hidden on md+
@@ -237,23 +253,19 @@ export default function Home() {
                     <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
                   </svg>
                 </a>
+
+                {/* Keyboard navigation hint */}
+                <p className="basis-full text-[11px] text-ice-400/50 font-mono mt-1 hidden sm:flex items-center gap-1.5">
+                  <span className="inline-block px-1.5 py-0.5 rounded bg-ink-2/60 border border-ice-700/30 text-[10px] text-ice-300">1-5</span>
+                  <span className="inline-block px-1.5 py-0.5 rounded bg-ink-2/60 border border-ice-700/30 text-[10px] text-ice-300">↑ / ↓</span>
+                  <span>{t("hero.keysHint")}</span>
+                </p>
               </div>
             </div>
 
             {/* Discord presence card */}
             <div className="mt-8">
               <DiscordCard userId="1545915805374357536" />
-            </div>
-
-            {/* Animated scroll indicator at bottom */}
-            <div
-              className="mt-6 md:mt-auto flex items-center gap-3 fade-in-up"
-              style={{ ["--d" as string]: "900ms" }}
-            >
-              <span className="scroll-indicator">
-                <span>{t("hero.scroll")}</span>
-                <span className="scroll-indicator__rail" />
-              </span>
             </div>
           </section>
 
@@ -539,6 +551,7 @@ export default function Home() {
                     {t("contact.openMail")}
                   </a>
                   <a
+                    href="https://github.com/nexos20lv"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
@@ -551,13 +564,67 @@ export default function Home() {
                 <ContactForm />
               </Reveal>
             </div>
-            <Reveal delay={320}>
-              <p className="mt-14 text-[11px] uppercase tracking-[0.25em] text-ice-400">
-                {t("contact.footer")}
-              </p>
-            </Reveal>
           </section>
         </main>
+
+        {/* Global Footer with Copyright, Tech Stack & Back to Top */}
+        <footer className="relative border-t border-ink-3/60 py-10 px-6 sm:px-10 md:px-14 pointer-events-auto bg-ink-0/80 backdrop-blur-md z-10">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+            
+            {/* Left: Branding & Copyright */}
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
+              <span className="font-semibold tracking-tight text-ice-50 font-mono text-base">
+                Pierre <span className="text-ice-400 font-normal">· NeXoS_20</span>
+              </span>
+              <span className="hidden sm:inline text-ice-700" aria-hidden>|</span>
+              <p className="text-xs text-ice-300">
+                © {new Date().getFullYear()} Pierre. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
+              </p>
+            </div>
+
+            {/* Center: Tech stack & status badge */}
+            <div className="flex items-center gap-2 text-xs font-mono text-ice-300 bg-ink-1/80 border border-ice-700/40 rounded-full px-3.5 py-1 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              <span>{lang === "fr" ? "Systèmes opérationnels" : "All systems operational"}</span>
+              <span className="text-ice-700" aria-hidden>•</span>
+              <span className="text-ice-400">Next.js & Three.js</span>
+            </div>
+
+            {/* Right: Social links & Back to top */}
+            <div className="flex items-center gap-5 text-xs">
+              <a
+                href="https://github.com/nexos20lv"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="hover"
+                className="text-ice-300 hover:text-ice-50 transition-colors"
+              >
+                GitHub
+              </a>
+              <a
+                href={`mailto:${EMAIL}`}
+                data-cursor="hover"
+                className="text-ice-300 hover:text-ice-50 transition-colors"
+              >
+                Email
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setManualNavigating(true, 1000);
+                  setActiveSection("hero");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                data-cursor="hover"
+                className="flex items-center gap-1.5 text-ice-200 hover:text-ice-50 transition-colors font-mono ml-2 group"
+              >
+                <span>{lang === "fr" ? "Haut de page" : "Back to top"}</span>
+                <span className="group-hover:-translate-y-0.5 transition-transform">↑</span>
+              </button>
+            </div>
+
+          </div>
+        </footer>
 
         <ProjectModal
           project={activeProject}

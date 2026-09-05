@@ -1,0 +1,16 @@
+{
+  "name": "Pierre · NeXoS_20 — Développeur Full-Stack",
+  "short_name": "NeXoS_20",
+  "description": "Portfolio de Pierre (NeXoS_20) - Développeur Full-Stack. Applications web modernes, dashboards temps réel et outils systèmes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090514",
+  "theme_color": "#090514",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

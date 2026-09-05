@@ -9,21 +9,29 @@
       "JavaScript",
       "WebRTC",
       "P2P",
-      "HTML",
-      "CSS"
+      "HTML5",
+      "CSS3"
     ],
     "desc": {
-      "fr": "Application web de transfert de fichiers P2P ultra-rapide via WebRTC avec code de partage, QR code & UI futuriste.",
-      "en": "Ultra-fast P2P file transfer web app via WebRTC with share code, QR code & futuristic UI."
+      "fr": "Application web de transfert direct de fichiers P2P ultra-rapide via WebRTC avec code de partage, QR code & UI futuriste.",
+      "en": "Ultra-fast P2P direct file transfer web app via WebRTC with share code, QR code & futuristic UI."
     },
     "details": {
-      "fr": "NexShare est une application web axée sur la confidentialité (Privacy-First) qui permet le transfert direct de fichiers entre appareils (P2P) en utilisant WebRTC. Sans serveur intermédiaire pour stocker les fichiers, elle garantit des transferts rapides et sécurisés. L'interface propose un système de partage simple par code ou QR code.",
-      "en": "NexShare is a privacy-first web application that allows direct file transfer between devices (P2P) using WebRTC. Without an intermediary server to store files, it guarantees fast and secure transfers. The interface offers a simple sharing system by code or QR code."
+      "fr": "NexShare est une application web axée sur la confidentialité (Privacy-First) permettant le transfert direct et chiffré de fichiers entre appareils (P2P) sans intermédiaire grâce à WebRTC. Sans serveur central pour stocker vos fichiers, elle garantit des transferts instantanés et sécurisés. L'interface propose un partage fluide par code unique ou QR code.",
+      "en": "NexShare is a privacy-first web application enabling direct, encrypted peer-to-peer file transfers (P2P) without middlemen using WebRTC. Without a central server storing files, it guarantees instant and secure transfers. The interface features seamless sharing via unique code or QR code."
     },
+    "url": "https://btmpierre.me/NexShare/",
     "github": "https://github.com/nexos20lv/NexShare",
-    "media": [],
+    "media": [
+      "/projects/nexshare.jpg"
+    ],
+    "badge": {
+      "fr": "P2P & WebRTC",
+      "en": "P2P & WebRTC"
+    },
     "highlights": [
       "javascript",
+      "webrtc",
       "html5",
       "css"
     ],
@@ -33,26 +41,38 @@
   {
     "num": "02",
     "name": {
-      "fr": "La Guerre Des Capsules",
-      "en": "The Capsule War"
+      "fr": "NxsBotDeployDash",
+      "en": "NxsBotDeployDash"
     },
     "stack": [
-      "Godot Engine",
-      "GDScript",
-      "2D/3D",
-      "Game Design"
+      "React",
+      "Node.js",
+      "Express",
+      "Python",
+      "WebSockets",
+      "PM2"
     ],
     "desc": {
-      "fr": "Jeu indie dynamique développé avec Godot Engine. Combats arènes, physiques 2D/3D et gameplay intense !",
-      "en": "Dynamic indie game developed with Godot Engine. Arena combat, 2D/3D physics and intense gameplay!"
+      "fr": "Panel d'administration full-stack pour l'hébergement et le monitoring de bots (Node.js & Python) avec WebSockets temps réel.",
+      "en": "Full-stack control panel for hosting and monitoring bots (Node.js & Python) with real-time WebSockets."
     },
     "details": {
-      "fr": "Projet de jeu vidéo indépendant complet créé avec Godot Engine (GDScript). Le jeu propose une action frénétique en arène avec des mécaniques physiques mêlant 2D et 3D. Le projet inclut également un Launcher officiel en Electron (La-Guerre-Des-Capsules-Launcher) avec auto-updater, et un serveur CDN pour la distribution (La-Guerre-Des-Capsules-DL).",
-      "en": "Complete independent video game project created with Godot Engine (GDScript). The game offers frantic arena action with physical mechanics mixing 2D and 3D. The project also includes an official Electron Launcher (La-Guerre-Des-Capsules-Launcher) with auto-updater, and a CDN server for distribution (La-Guerre-Des-Capsules-DL)."
+      "fr": "Interface d'administration (Dashboard) full-stack complète pour le déploiement, la gestion des logs et le monitoring de processus. Conçue pour orchestrer des environnements Node.js et Python, la plateforme communique en temps réel via WebSockets, gère le cycle de vie des applications avec PM2, et offre une interface moderne et intuitive en React.",
+      "en": "Comprehensive full-stack dashboard for deployment, log monitoring, and process orchestration. Designed to run Node.js and Python environments, the platform communicates in real-time via WebSockets, manages application lifecycles with PM2, and features a modern, intuitive React interface."
     },
-    "github": "https://github.com/nexos20lv/La-Guerre-Des-Capsules",
-    "media": [],
+    "github": "https://github.com/nexos20lv/NxsBotDeployDash",
+    "media": [
+      "/projects/nxsbotdeploydash.jpg"
+    ],
+    "badge": {
+      "fr": "Plateforme Full-Stack",
+      "en": "Full-Stack Platform"
+    },
     "highlights": [
+      "react",
+      "nodedotjs",
+      "express",
+      "pm2",
       "python"
     ],
     "align": "right",
@@ -61,28 +81,34 @@
   {
     "num": "03",
     "name": {
-      "fr": "Home Assistant Desktop",
-      "en": "Home Assistant Desktop"
+      "fr": "POV — Afficheur Holographique",
+      "en": "POV — Holographic Display"
     },
     "stack": [
-      "Electron",
-      "JavaScript",
-      "Cross-Platform",
-      "SmartHome"
+      "Raspberry Pi",
+      "Python",
+      "Systèmes Embarqués",
+      "Effet Hall",
+      "Impression 3D & CAO"
     ],
     "desc": {
-      "fr": "Application de bureau native pour contrôler votre domotique Home Assistant avec télémétrie matérielle & multi-serveurs.",
-      "en": "Native desktop application to control your Home Assistant smart home with hardware telemetry & multi-server support."
+      "fr": "Afficheur holographique rotatif à hélice LED projetant des visuels flottant dans l'air via le principe de persistance rétinienne.",
+      "en": "Rotary LED persistence-of-vision holographic display projecting floating visuals in mid-air without a physical screen."
     },
     "details": {
-      "fr": "Une application de bureau (Desktop App) multiplateforme développée avec Electron pour interagir de manière native avec le système domotique Home Assistant. Elle apporte des fonctionnalités exclusives comme la gestion multi-serveurs et la remontée des données de télémétrie matérielle de l'ordinateur vers Home Assistant.",
-      "en": "A cross-platform desktop application developed with Electron to interact natively with the Home Assistant home automation system. It brings exclusive features like multi-server management and hardware telemetry data reporting from the computer to Home Assistant."
+      "fr": "Projet d'ingénierie conçu pour les Olympiades de Sciences de l'Ingénieur (« L'ingénierie au service de l'art »). Le dispositif combine mécanique, électronique et programmation : une hélice de LED tourne à 1 200 tr/min (moteur 12V), synchronisée au tour près grâce à un capteur magnétique à effet Hall. Une Raspberry Pi découpe les visuels importés en tranches radiales et pilote l'allumage des LED à la microseconde. L'ensemble de la structure mécanique a été modélisé sur mesure en CAO et imprimé en 3D (Bambu Lab) avec un châssis ajouré optimisé pour le refroidissement.",
+      "en": "Engineering project designed for the Engineering Sciences Olympiads (\"Engineering for Art\"). The system combines mechanics, electronics, and software: an LED blade spins at 1,200 RPM (12V motor), synchronized per revolution via a Hall effect magnetic sensor. A Raspberry Pi slices imported graphics into radial segments and pulses LEDs with microsecond precision. All mechanical structural parts were custom CAD-modeled and 3D printed (Bambu Lab) with optimized open-airflow ventilation."
     },
-    "github": "https://github.com/nexos20lv/Home-Assistant-Desktop",
-    "media": [],
+    "media": [
+      "/projects/pov.png"
+    ],
+    "badge": {
+      "fr": "Hardware & Embarqué",
+      "en": "Hardware & Embedded"
+    },
     "highlights": [
-      "javascript",
-      "nodedotjs"
+      "raspberrypi",
+      "python"
     ],
     "align": "left",
     "section": "project3"
@@ -90,36 +116,39 @@
   {
     "num": "04",
     "name": {
-      "fr": "NxsBotDeployDash",
-      "en": "NxsBotDeployDash"
+      "fr": "Home Assistant Desktop",
+      "en": "Home Assistant Desktop"
     },
     "stack": [
-      "Node.js",
-      "Express",
-      "React",
-      "Python",
-      "PM2"
+      "Home Assistant",
+      "Electron",
+      "JavaScript",
+      "Cross-Platform",
+      "SmartHome",
+      "API REST"
     ],
     "desc": {
-      "fr": "Panel d'hébergement privé pour bots Discord (Node.js & Python) avec design Claymorphism & WebSockets.",
-      "en": "Private hosting panel for Discord bots (Node.js & Python) with Claymorphism design & WebSockets."
+      "fr": "Application de bureau native pour contrôler votre domotique Home Assistant avec télémétrie matérielle de la machine.",
+      "en": "Native desktop application to control your Home Assistant smart home with system hardware telemetry."
     },
     "details": {
-      "fr": "Interface d'administration (Dashboard) full-stack pour le déploiement et la gestion de bots Discord. Supporte les environnements Node.js et Python. Le panel communique en temps réel via WebSockets, utilise PM2 pour la gestion des processus, et arbore une interface utilisateur moderne basée sur le style Claymorphism.",
-      "en": "Full-stack administration interface (Dashboard) for deploying and managing Discord bots. Supports Node.js and Python environments. The panel communicates in real-time via WebSockets, uses PM2 for process management, and features a modern user interface based on the Claymorphism style."
+      "fr": "Application de bureau (Desktop App) multiplateforme développée avec Electron pour interagir nativement avec l'écosystème domotique Home Assistant. Elle apporte des fonctionnalités exclusives comme la gestion multi-serveurs et la remontée en direct des données de télémétrie matérielle (CPU, RAM, batterie) vers Home Assistant pour créer des automatisations intelligentes.",
+      "en": "Cross-platform desktop application built with Electron to interact natively with the Home Assistant ecosystem. It brings exclusive capabilities such as multi-server management and direct hardware telemetry reporting (CPU, RAM, battery) to Home Assistant for intelligent automations."
     },
-    "github": "https://github.com/nexos20lv/NxsBotDeployDash",
-    "media": [],
-    "highlights": [
-      "react",
-      "nodedotjs",
-      "python",
-      "tailwindcss"
+    "github": "https://github.com/nexos20lv/Home-Assistant-Desktop",
+    "media": [
+      "/projects/homeassistant.jpg"
     ],
     "badge": {
-      "fr": "Full-Stack",
-      "en": "Full-Stack"
+      "fr": "Application Bureau",
+      "en": "Desktop App"
     },
+    "highlights": [
+      "homeassistant",
+      "electron",
+      "javascript",
+      "nodedotjs"
+    ],
     "align": "right",
     "section": "project4"
   }

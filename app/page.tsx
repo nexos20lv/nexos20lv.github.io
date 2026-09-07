@@ -15,6 +15,8 @@ const ContactForm = dynamic(() => import("@/components/ContactForm"), { ssr: fal
 import LanguagePicker from "@/components/LanguagePicker";
 import DiscordCard from "@/components/DiscordCard";
 import ProjectModal from "@/components/ProjectModal";
+import NexsuGame from "@/components/nexsu/NexsuGame";
+import { useKonamiCode } from "@/lib/useKonamiCode";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";
@@ -96,6 +98,11 @@ export default function Home() {
   const { t, lang } = useLanguage();
   const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [isNexsuOpen, setIsNexsuOpen] = useState(false);
+
+  useKonamiCode(() => {
+    setIsNexsuOpen(true);
+  });
 
   return (
     <SmoothScroll>
@@ -601,6 +608,16 @@ export default function Home() {
               </a>
               <button
                 type="button"
+                onClick={() => setIsNexsuOpen(true)}
+                data-cursor="hover"
+                className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-900/80 hover:bg-cyan-950/60 border border-slate-800 hover:border-cyan-500/40 text-[10px] font-mono text-slate-500 hover:text-cyan-300 transition-all shadow-sm"
+                title={t("nexsu.easterEggTip")}
+              >
+                <span>🕹️</span>
+                <span className="tracking-widest font-semibold">↑↑↓↓←→←→BA</span>
+              </button>
+              <button
+                type="button"
                 onClick={() => {
                   setManualNavigating(true, 1000);
                   setActiveSection("hero");
@@ -621,6 +638,10 @@ export default function Home() {
           project={activeProject}
           onClose={() => setActiveProject(null)}
         />
+
+        {isNexsuOpen && (
+          <NexsuGame onClose={() => setIsNexsuOpen(false)} />
+        )}
       </div>
     </SmoothScroll>
   );

@@ -53,6 +53,11 @@ export const DICT: Record<string, Node> = {
     linkedin: { fr: "LinkedIn", en: "LinkedIn" },
     footer: { fr: "Conçu et développé avec passion", en: "Designed & built with passion" },
   },
+  nexsu: {
+    title: { fr: "NeXsu! — Jeu de Rythme Cyberpunk", en: "NeXsu! — Cyberpunk Rhythm Arcade" },
+    hint: { fr: "Cliquez sur les cercles ou utilisez Z et X !", en: "Click circles or press Z & X keys!" },
+    easterEggTip: { fr: "Secret : Tape le code Konami [↑↑↓↓←→←→BA] !", en: "Secret: Type Konami code [↑↑↓↓←→←→BA]!" },
+  },
   nav: {
     home: { fr: "Accueil", en: "Home" },
     stack: { fr: "Compétences", en: "Stack" },

@@ -36,6 +36,12 @@ export const DICT: Record<string, Node> = {
     title: { fr: "Projets Récents", en: "Recent Work" },
     viewMore: { fr: "Voir les détails", en: "View details" },
     kicker: { fr: "Projet", en: "Project" },
+    tabDemo: { fr: "Démo Interactive", en: "Interactive Demo" },
+    tabMedia: { fr: "Captures & Galerie", en: "Screenshots & Gallery" },
+    close: { fr: "Fermer", en: "Close" },
+    openSite: { fr: "Visiter le site", en: "Visit site" },
+    viewCode: { fr: "Code source", en: "Source code" },
+    stackLabel: { fr: "Technologies", en: "Technologies" },
   },
   contact: {
     kicker: { fr: "Une idée de projet ?", en: "Have a project in mind?" },

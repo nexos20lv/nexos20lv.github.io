@@ -19,7 +19,12 @@ import { useSeason } from "@/components/SeasonProvider";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useActiveSection } from "@/lib/useActiveSection";
 import * as THREE from "three";
-import { SKILLS_GRID, type SkillIcon } from "@/lib/skills";
+import {
+  SKILLS_GRID,
+  type SkillIcon,
+  getSectionSkillsGrid,
+} from "@/lib/skills";
+import { getProjectBySection } from "@/lib/projects";
 
 // Suppress non-fatal Three.js r183+ deprecation warning emitted by @react-three/fiber's
 // internal loop until R3F v10 switches to THREE.Timer.
@@ -113,6 +118,16 @@ const SECTION_STATES: Record<string, KeyboardState> = {
     posZ: 0,
     scale: 0.85,
   },
+  // Project 5 — left-aligned, keyboard right.
+  project5: {
+    yaw: 0,
+    pitch: 0.7,
+    roll: 0.2,
+    posX: 1.5,
+    posY: 0.2,
+    posZ: 0,
+    scale: 0.85,
+  },
   experience: {
     yaw: Math.PI * 0.3,
     pitch: Math.PI * 0.08,
@@ -136,6 +151,15 @@ const SECTION_STATES: Record<string, KeyboardState> = {
     scale: 1,
   },
 };
+
+function getTargetKeyboardState(section: string): KeyboardState {
+  if (SECTION_STATES[section]) return SECTION_STATES[section];
+  if (section.startsWith("project")) {
+    const n = parseInt(section.replace("project", ""), 10) || 1;
+    return n % 2 === 1 ? SECTION_STATES.project1 : SECTION_STATES.project2;
+  }
+  return SECTION_STATES.hero;
+}
 
 // Mobile lives in the hero only (the canvas scrolls away with it), so there is
 // no per-section choreography — the keyboard sits centered with a permanent
@@ -648,6 +672,13 @@ function Keyboard({ mobile }: { mobile: boolean }) {
   const { palette } = useSeason();
   const { t } = useLanguage();
   const [activeSection, activeSectionRef, highlightsRef] = useActiveSection();
+  const currentProject = useMemo(
+    () => getProjectBySection(activeSection),
+    [activeSection]
+  );
+  const skills = useMemo(() => {
+    return getSectionSkillsGrid(activeSection, currentProject?.highlights);
+  }, [activeSection, currentProject]);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
   // Mutable holders for the smoothed target — kept off React state so
   // useFrame can read them every tick without triggering re-renders.
@@ -715,7 +746,7 @@ function Keyboard({ mobile }: { mobile: boolean }) {
       });
 
       const [row, col] = id.split("-").map(Number);
-      const icon = SKILLS[row]?.[col];
+      const icon = skills[row]?.[col];
       if (icon) {
         setTypedSkill(icon);
         if (typedTimeoutRef.current) clearTimeout(typedTimeoutRef.current);
@@ -767,7 +798,7 @@ function Keyboard({ mobile }: { mobile: boolean }) {
     const t = state.clock.elapsedTime;
     const target = mobile
       ? MOBILE_STATE
-      : SECTION_STATES[activeSectionRef.current] ?? SECTION_STATES.hero;
+      : getTargetKeyboardState(activeSectionRef.current);
     // Frame-rate-independent lerp: ~0.06 per 16ms tick = a satisfying ease.
     const k = 1 - Math.pow(0.001, delta);
     const c = current.current;
@@ -837,10 +868,10 @@ function Keyboard({ mobile }: { mobile: boolean }) {
   const hoveredIcon = useMemo(() => {
     if (hoveredKey) {
       const [r, c] = hoveredKey.split("-").map(Number);
-      return SKILLS[r]?.[c] ?? null;
+      return skills[r]?.[c] ?? null;
     }
     return typedSkill;
-  }, [hoveredKey, typedSkill]);
+  }, [hoveredKey, typedSkill, skills]);
 
   const keycapY = BASE_HEIGHT / 2 + KEYCAP_HEIGHT / 2 + 0.005;
   const keycaps = [];
@@ -849,7 +880,7 @@ function Keyboard({ mobile }: { mobile: boolean }) {
       const x = (col - (COLS - 1) / 2) * COL_SPACING;
       const z = (row - (ROWS - 1) / 2) * ROW_SPACING;
       const id = `${row}-${col}`;
-      const icon = SKILLS[row][col];
+      const icon = skills[row]?.[col] || SKILLS_GRID[row]?.[col];
       // Phase staggered by grid position so highlighted keys look like a
       // travelling wave rather than a synchronised pulse. Constants tuned
       // by eye — any non-degenerate combo works, just avoid exact multiples
@@ -935,7 +966,10 @@ function Keyboard({ mobile }: { mobile: boolean }) {
               lineHeight={1.25}
               overflowWrap="break-word"
             >
-              {t(`keyboard.taglines.${hoveredIcon.slug}`)}
+              {t(`keyboard.taglines.${hoveredIcon.slug}`) !==
+              `keyboard.taglines.${hoveredIcon.slug}`
+                ? t(`keyboard.taglines.${hoveredIcon.slug}`)
+                : hoveredIcon.title}
             </Text>
           </group>
         </Suspense>

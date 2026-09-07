@@ -1,7 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLanguage } from "./LanguageProvider";
+
+function subscribeClock(callback: () => void) {
+  const timer = setInterval(callback, 1000);
+  return () => clearInterval(timer);
+}
+function getClockSnapshot() {
+  return Date.now();
+}
+function getClockServerSnapshot() {
+  return 0;
+}
 
 type DiscordActivity = {
   id: string;
@@ -36,8 +47,8 @@ type LanyardSpotify = {
   album_art_url: string;
   track_id?: string;
   timestamps?: {
-    start: number;
-    end: number;
+    start?: number;
+    end?: number;
   };
 };
 
@@ -90,15 +101,8 @@ function formatDuration(ms: number): string {
 
 export default function DiscordCard({ userId }: { userId: string }) {
   const [data, setData] = useState<LanyardData | null>(null);
-  const [now, setNow] = useState<number>(Date.now());
+  const now = useSyncExternalStore(subscribeClock, getClockSnapshot, getClockServerSnapshot);
   const { lang } = useLanguage();
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setNow(Date.now());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     let ws: WebSocket;
@@ -212,7 +216,7 @@ export default function DiscordCard({ userId }: { userId: string }) {
         artist: spotifyActivity.state || "Spotify",
         album: spotifyActivity.assets?.large_text || "",
         album_art_url: getAssetUrl(spotifyActivity.application_id, spotifyActivity.assets?.large_image) || "",
-        timestamps: spotifyActivity.timestamps as any,
+        timestamps: spotifyActivity.timestamps,
       };
     }
   }

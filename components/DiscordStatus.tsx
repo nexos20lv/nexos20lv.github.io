@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
@@ -6,7 +6,7 @@ import { useLanguage } from "./LanguageProvider";
 type LanyardData = {
   data?: {
     discord_status: string;
-    activities: any[];
+    activities: Array<Record<string, unknown>>;
     listening_to_spotify: boolean;
     spotify?: {
       song: string;

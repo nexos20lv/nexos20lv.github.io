@@ -1,7 +1,9 @@
-name: Deploy portfolio to GitHub Pages
+name: CI & Deploy Portfolio to GitHub Pages
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -10,37 +12,112 @@ permissions:
   pages: write
   id-token: write
 
+# Prevent concurrent deployments and auto-cancel outdated runs
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
+  # -------------------------------------------------------------
+  # Job 1: Automated Quality & Integrity Verification
+  # -------------------------------------------------------------
+  verify:
+    name: 🔍 Quality & Integrity Checks
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Node.js
+
+      - name: ⚙️ Setup Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - name: Install dependencies
+
+      - name: 📦 Install dependencies
         run: npm ci
-      - name: Build static site
+
+      - name: 🗂️ Validate projects.json structure
+        run: |
+          node -e "
+            const projects = require('./data/projects.json');
+            if (!Array.isArray(projects) || projects.length === 0) {
+              console.error('❌ Error: data/projects.json must contain a non-empty array');
+              process.exit(1);
+            }
+            projects.forEach((p, i) => {
+              if (!p.name || !p.desc || !p.stack || !Array.isArray(p.stack)) {
+                console.error('❌ Error in project index ' + i + ': name, desc and stack array are required');
+                process.exit(1);
+              }
+            });
+            console.log('✅ projects.json integrity verified (' + projects.length + ' projects checked)');
+          "
+
+      - name: 🏷️ TypeScript Typecheck
+        run: npm run typecheck
+
+      - name: 🧹 ESLint Code Quality
+        run: npm run lint
+
+  # -------------------------------------------------------------
+  # Job 2: Production Build & Static Export
+  # -------------------------------------------------------------
+  build:
+    name: 🏗️ Build Static Site
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: ⚡ Restore Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: 🚀 Build production static export
         run: npm run build
-      - name: Upload Pages artifact
+
+      - name: 🛡️ Verify build artifacts
+        run: |
+          if [ ! -f "./out/index.html" ]; then
+            echo "❌ Critical error: ./out/index.html was not generated!"
+            exit 1
+          fi
+          echo "✅ Export successful. Files in ./out:"
+          ls -la ./out
+
+      - name: 📤 Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
+  # -------------------------------------------------------------
+  # Job 3: Automated Deployment to GitHub Pages (main branch only)
+  # -------------------------------------------------------------
   deploy:
+    name: 🚀 Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: 🌐 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

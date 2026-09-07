@@ -266,8 +266,6 @@ function makeIconTexture(
   return tex;
 }
 
-const SKILLS = SKILLS_GRID;
-
 const COLS = 5;
 const ROWS = 3;
 const KEYCAP_SIZE = 0.4;
@@ -505,17 +503,21 @@ function Keycap({
   const matRef = useRef<THREE.MeshPhysicalMaterial>(null);
   const baseEmissive = 0.3;
 
-  // Each key gets its own random frequency + phase, stable across re-renders
-  // so every keycap's random bob feels independent (no synchronised wave).
-  // Sampled once at mount.
-  const randomBob = useMemo(
-    () => ({
-      freq: 0.6 + Math.random() * 0.6, // 0.6..1.2 Hz-ish
-      phase: Math.random() * Math.PI * 2,
-      threshold: 0.45 + Math.random() * 0.2, // 0.45..0.65 — higher = rarer pop
-    }),
-    []
-  );
+  // Each key gets its own deterministic frequency + phase derived from wavePhase,
+  // stable across re-renders so every keycap's random bob feels independent.
+  const randomBob = useMemo(() => {
+    const s1 = Math.sin(wavePhase * 12.9898);
+    const s2 = Math.cos(wavePhase * 78.233);
+    const s3 = Math.sin(wavePhase * 43.1415);
+    const r1 = Math.abs(s1 * 43758.5453) % 1;
+    const r2 = Math.abs(s2 * 23421.631) % 1;
+    const r3 = Math.abs(s3 * 12345.678) % 1;
+    return {
+      freq: 0.6 + r1 * 0.6,
+      phase: r2 * Math.PI * 2,
+      threshold: 0.45 + r3 * 0.2,
+    };
+  }, [wavePhase]);
 
   const iconTexture = useMemo(
     () => makeIconTexture(icon.path, `#${icon.hex}`),

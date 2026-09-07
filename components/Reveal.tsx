@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  createElement,
   useEffect,
   useRef,
   type CSSProperties,
@@ -38,7 +37,7 @@ export default function Reveal({
   threshold = 0.15,
   once = true,
 }: RevealProps) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -80,13 +79,14 @@ export default function Reveal({
     ["--reveal-from" as string]: axis[direction],
   };
 
-  return createElement(
-    Tag,
-    {
-      ref,
-      className: `reveal ${className}`.trim(),
-      style,
-    },
-    children
+  const Component = Tag as "div";
+  return (
+    <Component
+      ref={ref}
+      className={`reveal ${className}`.trim()}
+      style={style}
+    >
+      {children}
+    </Component>
   );
 }

@@ -14,9 +14,7 @@ const ContactForm = dynamic(() => import("@/components/ContactForm"), { ssr: fal
 
 import LanguagePicker from "@/components/LanguagePicker";
 import DiscordCard from "@/components/DiscordCard";
-import ProjectModal, {
-  type ProjectDetail,
-} from "@/components/ProjectModal";
+import ProjectModal from "@/components/ProjectModal";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";

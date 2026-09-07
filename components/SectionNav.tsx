@@ -8,9 +8,10 @@ import {
   setActiveSection,
   setManualNavigating,
 } from "@/lib/useActiveSection";
+import { PROJECTS } from "@/lib/projects";
 
 // Vertical dots fixed to the right edge that highlight the current section
-// and listen for keyboard navigation (arrows, 1-5, Home, End).
+// and listen for keyboard navigation (arrows, 1-9, Home, End).
 export default function SectionNav() {
   const [active] = useActiveSection();
   const { t, lang } = useLanguage();
@@ -21,10 +22,10 @@ export default function SectionNav() {
       { id: "hero", label: t("nav.home") },
       { id: "stack", label: t("nav.stack") },
       { id: "experience", label: t("nav.experience") },
-      { id: "project1", label: `${t("nav.project")} 01` },
-      { id: "project2", label: `${t("nav.project")} 02` },
-      { id: "project3", label: `${t("nav.project")} 03` },
-      { id: "project4", label: `${t("nav.project")} 04` },
+      ...PROJECTS.map((p) => ({
+        id: p.section,
+        label: `${t("nav.project")} ${p.num}`,
+      })),
       { id: "contact", label: t("nav.contact") },
     ],
     [t]
@@ -94,45 +95,12 @@ export default function SectionNav() {
         return;
       }
 
-      // Direct section jumps via number keys 1 to 5 (and 6-8)
-      if (e.code === "Digit1" || e.key === "1") {
+      // Direct section jumps via number keys 1 to 9
+      const digitMatch = e.code.match(/^Digit([1-9])$/);
+      const digit = digitMatch ? parseInt(digitMatch[1], 10) : parseInt(e.key, 10);
+      if (!isNaN(digit) && digit >= 1 && digit <= SECTIONS.length) {
         e.preventDefault();
-        goTo("hero");
-        return;
-      }
-      if (e.code === "Digit2" || e.key === "2") {
-        e.preventDefault();
-        goTo("stack");
-        return;
-      }
-      if (e.code === "Digit3" || e.key === "3") {
-        e.preventDefault();
-        goTo("experience");
-        return;
-      }
-      if (e.code === "Digit4" || e.key === "4") {
-        e.preventDefault();
-        goTo("project1");
-        return;
-      }
-      if (e.code === "Digit5" || e.key === "5") {
-        e.preventDefault();
-        goTo("contact");
-        return;
-      }
-      if (e.code === "Digit6" || e.key === "6") {
-        e.preventDefault();
-        goTo("project2");
-        return;
-      }
-      if (e.code === "Digit7" || e.key === "7") {
-        e.preventDefault();
-        goTo("project3");
-        return;
-      }
-      if (e.code === "Digit8" || e.key === "8") {
-        e.preventDefault();
-        goTo("project4");
+        goTo(SECTIONS[digit - 1].id);
         return;
       }
 
@@ -193,7 +161,7 @@ export default function SectionNav() {
       {/* Keyboard navigation helper pill */}
       <div
         className="mt-2 flex flex-col items-center gap-1 opacity-50 hover:opacity-100 transition-opacity"
-        title={lang === "fr" ? "Naviguez avec ↑ / ↓ ou les chiffres 1-5" : "Navigate with ↑ / ↓ or keys 1-5"}
+        title={lang === "fr" ? "Naviguez avec ↑ / ↓ ou les touches 1-9" : "Navigate with ↑ / ↓ or keys 1-9"}
       >
         <div className="flex items-center gap-1 text-[9px] font-mono text-ice-300/80 bg-ink-2/80 border border-ice-700/30 rounded px-1.5 py-0.5 shadow-sm">
           <span>↑</span>

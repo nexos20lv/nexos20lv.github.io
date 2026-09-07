@@ -37,6 +37,25 @@ npm run dev
 \\\
 Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
+## 💡 Ajouter un Projet Facilement (`data/projects.json`)
+
+Il suffit d'ajouter un nouvel objet dans `data/projects.json`. **Tous les champs techniques (numéro, section, alignement, highlights, icônes du clavier 3D, navigation latérale) sont 100% automatiques !**
+
+Exemple minimal :
+```json
+{
+  "name": "Mon Super Projet",
+  "stack": ["Python", "FastAPI", "Docker"],
+  "desc": "Description du projet en une ou deux phrases...",
+  "github": "https://github.com/nexos20lv/mon-projet",
+  "media": ["/projects/mon-image.jpg"]
+}
+```
+
+- **Clavier 3D dynamique :** En faisant défiler la page jusqu'au projet, le clavier 3D fait une rotation et remplace automatiquement ses touches par la stack de ce projet (ex: Python, FastAPI, Docker), qui s'illuminent en surbrillance.
+- **Barre latérale automatique :** Une nouvelle puce numérotée est ajoutée automatiquement avec son raccourci clavier.
+- **Multilingue optionnel :** Vous pouvez fournir une simple chaîne de texte OU un objet `{ "fr": "...", "en": "..." }`.
+
 ## 📄 Licence
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.

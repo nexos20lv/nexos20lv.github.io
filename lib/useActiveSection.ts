@@ -1,19 +1,17 @@
 "use client";
 
 import { useEffect, useSyncExternalStore } from "react";
+import { PROJECTS } from "@/lib/projects";
 
-export const SECTION_IDS = [
+export const SECTION_IDS: readonly string[] = [
   "hero",
   "stack",
   "experience",
-  "project1",
-  "project2",
-  "project3",
-  "project4",
+  ...PROJECTS.map((p) => p.section),
   "contact",
-] as const;
+];
 
-export type SectionId = (typeof SECTION_IDS)[number];
+export type SectionId = string;
 
 let currentSection: string = "hero";
 let currentHighlights: Set<string> = new Set();

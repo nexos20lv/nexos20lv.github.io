@@ -100,18 +100,23 @@ function ProjectModalContent({
         }`}
       >
         {hasDemo && (
-          <div className="project-modal__tabs" role="tablist">
+          <div
+            role="tablist"
+            className="absolute top-3 left-3 z-30 inline-flex items-center gap-1.5 p-1 rounded-full bg-slate-950/90 border border-ice-700/40 backdrop-blur-md shadow-2xl"
+          >
             <button
               type="button"
               role="tab"
               aria-selected={activeTab === "demo"}
               onClick={() => setActiveTab("demo")}
               data-cursor="hover"
-              className={`project-modal__tab ${
-                activeTab === "demo" ? "project-modal__tab--active" : ""
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium transition-all ${
+                activeTab === "demo"
+                  ? "bg-cyan-500/25 text-cyan-200 border border-cyan-400/50 shadow-[0_0_12px_rgba(6,182,212,0.35)] font-semibold"
+                  : "text-ice-400 hover:text-ice-200 hover:bg-white/5 border border-transparent"
               }`}
             >
-              <span className="project-modal__tab-dot" />
+              <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] animate-pulse" />
               {t("projects.tabDemo")}
             </button>
             <button
@@ -120,17 +125,34 @@ function ProjectModalContent({
               aria-selected={activeTab === "gallery"}
               onClick={() => setActiveTab("gallery")}
               data-cursor="hover"
-              className={`project-modal__tab ${
-                activeTab === "gallery" ? "project-modal__tab--active" : ""
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium transition-all ${
+                activeTab === "gallery"
+                  ? "bg-cyan-500/25 text-cyan-200 border border-cyan-400/50 shadow-[0_0_12px_rgba(6,182,212,0.35)] font-semibold"
+                  : "text-ice-400 hover:text-ice-200 hover:bg-white/5 border border-transparent"
               }`}
             >
+              <svg
+                viewBox="0 0 24 24"
+                width="13"
+                height="13"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                <circle cx="9" cy="9" r="2" />
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+              </svg>
               {t("projects.tabMedia")}
             </button>
           </div>
         )}
 
         {hasDemo && activeTab === "demo" ? (
-          <div className="w-full h-full pt-10 sm:pt-11 flex-1 flex flex-col">
+          <div className="w-full pt-14 pb-3 px-1 sm:px-2 flex flex-col items-center">
             {demoType === "nexshare" && <NexShareDemo />}
             {demoType === "pov" && <PovDemo />}
             {demoType === "lvm" && <LvmDemo />}

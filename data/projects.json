@@ -151,5 +151,43 @@
     ],
     "align": "right",
     "section": "project4"
+  },
+  {
+    "num": "05",
+    "name": {
+      "fr": "LVM Manager Pro",
+      "en": "LVM Manager Pro"
+    },
+    "stack": [
+      "Python",
+      "Textual",
+      "Bash",
+      "LVM",
+      "Debian"
+    ],
+    "desc": {
+      "fr": "Application Terminal (TUI) moderne pour la gestion complète de LVM sur serveur Linux.",
+      "en": "Modern Terminal User Interface (TUI) application for comprehensive LVM management on Linux servers."
+    },
+    "details": {
+      "fr": "LVM Manager Pro est un gestionnaire LVM interactif conçu pour les environnements serveurs (Debian/Ubuntu). Développé en Python avec le framework Textual, il offre une interface moderne en terminal (support complet de la souris, mode clair/sombre, boîtes de dialogue) qui remplace les commandes fastidieuses. Il propose également une architecture de déploiement sécurisée via un script auto-extractible en une seule ligne (one-liner).",
+      "en": "LVM Manager Pro is an interactive LVM manager tailored for server environments (Debian/Ubuntu). Built in Python with the Textual framework, it provides a modern terminal interface (full mouse support, light/dark mode, modal dialogs) replacing tedious CLI commands. It also features a secure deployment architecture via a single-line self-extracting installer."
+    },
+    "github": "https://github.com/nexos20lv/lvm-manager-tui",
+    "media": [
+      "/projects/lvm.png"
+    ],
+    "badge": {
+      "fr": "System Admin & TUI",
+      "en": "System Admin & TUI"
+    },
+    "highlights": [
+      "python",
+      "gnubash",
+      "debian",
+      "linux"
+    ],
+    "align": "left",
+    "section": "project5"
   }
 ]

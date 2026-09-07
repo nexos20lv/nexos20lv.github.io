@@ -23,21 +23,14 @@ import { SKILLS_FLAT } from "@/lib/skills";
 import { setActiveSection, setManualNavigating } from "@/lib/useActiveSection";
 import type { Lang } from "@/lib/i18n";
 
-const EMAIL = "contact@nexos20.dev";
+const EMAIL = "contact.nexos20@gmail.com";
 
 // Localised content lives in `{ es, en }` objects inside these arrays so the
 // page can be a straightforward array.map() at render time. Tech names stay
 // as plain strings (they're brand names, not localised).
 type Localised = { fr: string; en: string };
 
-type Project = ProjectDetail & {
-  align: "left" | "right";
-  section: "project1" | "project2" | "project3" | "project4";
-};
-
-
-import projectsData from "@/data/projects.json";
-const projects: Project[] = projectsData as Project[];
+import { PROJECTS as projects, type NormalizedProject as Project } from "@/lib/projects";
 
 const experiences: Array<{
   role: Localised;

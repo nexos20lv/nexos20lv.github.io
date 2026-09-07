@@ -77,7 +77,7 @@ export default function ContactForm() {
           id="email"
           required
           className="w-full px-4 py-2 rounded-lg bg-ink-2/60 border border-ink-3 text-ice-50 placeholder-ice-400 focus:outline-none focus:border-ice-500 transition-colors"
-          placeholder="contact@example.com"
+          placeholder={lang === "fr" ? "votre.email@exemple.com" : "your.email@example.com"}
         />
       </div>
 

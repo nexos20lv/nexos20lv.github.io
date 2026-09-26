@@ -1,6 +1,45 @@
 [
   {
+    "name": {
+      "fr": "Portail d'Orientation",
+      "en": "Orientation Portal"
+    },
+    "stack": [
+      "Next.js",
+      "React",
+      "Prisma",
+      "SQLite",
+      "PWA"
+    ],
+    "desc": {
+      "fr": "Plateforme complète de gestion de la semaine de l'orientation pour un lycée avec IA, PWA et billets QR Code.",
+      "en": "Complete high school orientation week management platform with AI, PWA, and QR Code tickets."
+    },
+    "details": {
+      "fr": "Le Portail d'Orientation est une plateforme développée sur mesure pour le Lycée Paul Duez. Elle gère l'inscription des élèves à des conférences d'orientation, inclut un assistant IA connecté aux fiches métiers de l'Onisep, et génère des billets QR code. Les professeurs peuvent faire l'appel (émargement) directement avec leur téléphone via la PWA, tandis qu'un puissant tableau de bord d'administration gère tout l'événement, les alertes et les exports Excel en temps réel.",
+      "en": "The Orientation Portal is a custom platform developed for Paul Duez High School. It manages student registrations for career conferences, features an AI assistant connected to official career databases, and generates QR code tickets. Teachers can mark attendance directly using their phones via the PWA, while a powerful admin dashboard manages the entire event, alerts, and Excel exports in real time."
+    },
+    "url": "https://orientation.projetspdz.in",
+    "github": "https://github.com/nexos20lv/orientation-portal",
+    "media": [
+      "/projects/orientation.jpg"
+    ],
+    "badge": {
+      "fr": "SaaS & PWA",
+      "en": "SaaS & PWA"
+    },
+    "highlights": [
+      "nextjs",
+      "react",
+      "prisma",
+      "typescript"
+    ],
     "num": "01",
+    "section": "project1",
+    "align": "left"
+  },
+  {
+    "num": "02",
     "name": {
       "fr": "NexShare",
       "en": "NexShare"
@@ -35,11 +74,11 @@
       "html5",
       "css"
     ],
-    "align": "left",
-    "section": "project1"
+    "align": "right",
+    "section": "project2"
   },
   {
-    "num": "02",
+    "num": "03",
     "name": {
       "fr": "NxsBotDeployDash",
       "en": "NxsBotDeployDash"
@@ -75,11 +114,11 @@
       "pm2",
       "python"
     ],
-    "align": "right",
-    "section": "project2"
+    "align": "left",
+    "section": "project3"
   },
   {
-    "num": "03",
+    "num": "04",
     "name": {
       "fr": "POV — Afficheur Holographique",
       "en": "POV — Holographic Display"
@@ -110,11 +149,11 @@
       "raspberrypi",
       "python"
     ],
-    "align": "left",
-    "section": "project3"
+    "align": "right",
+    "section": "project4"
   },
   {
-    "num": "04",
+    "num": "05",
     "name": {
       "fr": "Home Assistant Desktop",
       "en": "Home Assistant Desktop"
@@ -149,11 +188,11 @@
       "javascript",
       "nodedotjs"
     ],
-    "align": "right",
-    "section": "project4"
+    "align": "left",
+    "section": "project5"
   },
   {
-    "num": "05",
+    "num": "06",
     "name": {
       "fr": "LVM Manager Pro",
       "en": "LVM Manager Pro"
@@ -188,7 +227,7 @@
       "debian",
       "linux"
     ],
-    "align": "left",
-    "section": "project5"
+    "align": "right",
+    "section": "project6"
   }
 ]
